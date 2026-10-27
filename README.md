@@ -56,6 +56,7 @@ The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (brea
   - `make_din_fp.py`: DIN-7 footprint.
   - `make_fab.py`: JLC outputs.
   - The generators rebuild from scratch; don't re-run them over hand edits.
+- `Case (3D print)/`: OpenSCAD case (base and lid), STLs and renders. Not yet test-printed; see its README.
 - `JLCPCB Output/`: Gerbers zip, BOM, CPL and `ORDER NOTES.txt`.
   - Bottom-side rotation fixes (U1-U3 +90, D1-D3 +180) are already applied. Give the preview a quick check anyway.
 
