@@ -7,7 +7,7 @@
 	(title_block
 		(title "C64 USB-C PD Power Adapter")
 		(date "2026-10-27")
-		(rev "0.2")
+		(rev "0.3")
 		(comment 1 "USB-C PD 15 V -> C64 7-pin DIN: +5 V and +12 V DC (on the 9 VAC input), two TPS54302 bucks")
 	)
 	(lib_symbols
@@ -2293,175 +2293,6 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "C64_PD_PSU:Polyfuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "F"
-				(at -2.54 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Polyfuse"
-				(at 2.54 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.27 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*polyfuse* *PTC*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Polyfuse_0_1"
-				(polyline
-					(pts
-						(xy -1.524 2.54)
-						(xy -1.524 1.524)
-						(xy 1.524 -1.524)
-						(xy 1.524 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -0.762 2.54)
-					(end 0.762 -2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54)
-						(xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Polyfuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5272,7 +5103,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 124.46 127 0)
 			(effects
 				(font
@@ -5299,7 +5130,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25796"
+		(property "LCSC" "C23206"
 			(at 124.46 127 0)
 			(effects
 				(font
@@ -5644,7 +5475,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 152.4 35.56 0)
 			(effects
 				(font
@@ -5671,7 +5502,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25741"
+		(property "LCSC" "C25803"
 			(at 152.4 35.56 0)
 			(effects
 				(font
@@ -5819,7 +5650,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 152.4 66.04 0)
 			(effects
 				(font
@@ -5846,7 +5677,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25741"
+		(property "LCSC" "C25803"
 			(at 152.4 66.04 0)
 			(effects
 				(font
@@ -6678,7 +6509,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 167.64 127 0)
 			(effects
 				(font
@@ -6705,7 +6536,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25790"
+		(property "LCSC" "C23178"
 			(at 167.64 127 0)
 			(effects
 				(font
@@ -6798,7 +6629,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 167.64 149.86 0)
 			(effects
 				(font
@@ -6825,7 +6656,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25792"
+		(property "LCSC" "C25819"
 			(at 167.64 149.86 0)
 			(effects
 				(font
@@ -6964,7 +6795,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 228.6 92.71 0)
 			(effects
 				(font
@@ -6973,7 +6804,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:C_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:C_0603_1608Metric"
 			(at 226.06 91.44 0)
 			(effects
 				(font
@@ -7000,7 +6831,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C14663"
 			(at 226.06 91.44 0)
 			(effects
 				(font
@@ -7093,7 +6924,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:L_Changjiang_FXL0630"
+		(property "Footprint" "C64_PD_PSU:L_Changjiang_FXL0530"
 			(at 226.06 111.76 0)
 			(effects
 				(font
@@ -7111,7 +6942,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "cjiang FXL0630-100-M 10 uH 4.5 A / Isat 5.5 A molded, 7x6.6 mm"
+		(property "Description" "cjiang FXL0530-100-M 10 uH 3.2 A / Isat 3.5 A molded, 5.4x5.2 mm (same part as L2: one extended line)"
 			(at 226.06 111.76 0)
 			(effects
 				(font
@@ -7120,7 +6951,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C167223"
+		(property "LCSC" "C177248"
 			(at 226.06 111.76 0)
 			(effects
 				(font
@@ -7554,7 +7385,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "75k"
 			(at 228.6 138.43 0)
 			(effects
 				(font
@@ -7563,7 +7394,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 226.06 137.16 0)
 			(effects
 				(font
@@ -7581,7 +7412,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "FB top: Vout = 0.596 x (1 + 100k/13.3k) = 5.08 V"
+		(property "Description" "FB top: Vout = 0.596 x (1 + 75k/10k) = 5.07 V (Basic values)"
 			(at 226.06 137.16 0)
 			(effects
 				(font
@@ -7590,7 +7421,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25741"
+		(property "LCSC" "C23242"
 			(at 226.06 137.16 0)
 			(effects
 				(font
@@ -7674,7 +7505,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "13.3k"
+		(property "Value" "10k"
 			(at 228.6 158.75 0)
 			(effects
 				(font
@@ -7683,7 +7514,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 226.06 157.48 0)
 			(effects
 				(font
@@ -7710,7 +7541,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C122547"
+		(property "LCSC" "C25804"
 			(at 226.06 157.48 0)
 			(effects
 				(font
@@ -7849,7 +7680,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "75pF"
+		(property "Value" "100pF"
 			(at 213.36 138.43 0)
 			(effects
 				(font
@@ -7858,7 +7689,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:C_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:C_0603_1608Metric"
 			(at 210.82 137.16 0)
 			(effects
 				(font
@@ -7885,7 +7716,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C37809"
+		(property "LCSC" "C14858"
 			(at 210.82 137.16 0)
 			(effects
 				(font
@@ -8597,7 +8428,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 182.88 254 0)
 			(effects
 				(font
@@ -8624,7 +8455,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25790"
+		(property "LCSC" "C23178"
 			(at 182.88 254 0)
 			(effects
 				(font
@@ -8717,7 +8548,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 182.88 269.24 0)
 			(effects
 				(font
@@ -8744,7 +8575,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25792"
+		(property "LCSC" "C25819"
 			(at 182.88 269.24 0)
 			(effects
 				(font
@@ -8883,7 +8714,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 228.6 227.33 0)
 			(effects
 				(font
@@ -8892,7 +8723,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:C_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:C_0603_1608Metric"
 			(at 226.06 226.06 0)
 			(effects
 				(font
@@ -8919,7 +8750,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C14663"
 			(at 226.06 226.06 0)
 			(effects
 				(font
@@ -9482,7 +9313,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 226.06 256.54 0)
 			(effects
 				(font
@@ -9509,7 +9340,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25741"
+		(property "LCSC" "C25803"
 			(at 226.06 256.54 0)
 			(effects
 				(font
@@ -9602,7 +9433,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 226.06 271.78 0)
 			(effects
 				(font
@@ -9629,7 +9460,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25905"
+		(property "LCSC" "C23186"
 			(at 226.06 271.78 0)
 			(effects
 				(font
@@ -9768,7 +9599,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "75pF"
+		(property "Value" "100pF"
 			(at 213.36 257.81 0)
 			(effects
 				(font
@@ -9777,7 +9608,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:C_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:C_0603_1608Metric"
 			(at 210.82 256.54 0)
 			(effects
 				(font
@@ -9804,7 +9635,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C37809"
+		(property "LCSC" "C14858"
 			(at 210.82 256.54 0)
 			(effects
 				(font
@@ -9871,7 +9702,7 @@
 		(uuid "a5f38543-f075-5b09-a9fa-9d7e1abe1a6b")
 	)
 	(symbol
-		(lib_id "C64_PD_PSU:Polyfuse")
+		(lib_id "C64_PD_PSU:R")
 		(at 60.96 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9888,7 +9719,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2A"
+		(property "Value" "0R"
 			(at 63.5 163.83 0)
 			(effects
 				(font
@@ -9897,7 +9728,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:Fuse_1206_3216Metric"
+		(property "Footprint" "C64_PD_PSU:R_1206_3216Metric"
 			(at 60.96 162.56 0)
 			(effects
 				(font
@@ -9915,7 +9746,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "LUTE 1206L200/16NR PTC, 2 A hold / 3.5 A trip, 16 V"
+		(property "Description" "0 R link (JLC Basic). Optional: fit a 1206 PTC here instead, e.g. LUTE 1206L200/16NR C22374899 (2 A hold)"
 			(at 60.96 162.56 0)
 			(effects
 				(font
@@ -9924,7 +9755,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C22374899"
+		(property "LCSC" "C17888"
 			(at 60.96 162.56 0)
 			(effects
 				(font
@@ -10088,7 +9919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "TVS 5 V standoff: clamps +5 V and trips F1 if the buck ever fails high"
+		(property "Description" "SMF5.0A TVS (JLC Preferred), clamps +5 V if the buck ever fails high"
 			(at 81.28 175.26 0)
 			(effects
 				(font
@@ -10097,7 +9928,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C193402"
+		(property "LCSC" "C19077497"
 			(at 81.28 175.26 0)
 			(effects
 				(font
@@ -10274,7 +10105,7 @@
 		)
 	)
 	(symbol
-		(lib_id "C64_PD_PSU:Polyfuse")
+		(lib_id "C64_PD_PSU:R")
 		(at 111.76 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10291,7 +10122,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1.1A"
+		(property "Value" "0R"
 			(at 114.3 163.83 0)
 			(effects
 				(font
@@ -10300,7 +10131,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:Fuse_1206_3216Metric"
+		(property "Footprint" "C64_PD_PSU:R_1206_3216Metric"
 			(at 111.76 162.56 0)
 			(effects
 				(font
@@ -10318,7 +10149,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "BHFUSE BSMD1206-110-24V PTC, 1.1 A hold / 2.2 A trip, 24 V"
+		(property "Description" "0 R link (JLC Basic). Optional: fit a 1206 PTC here instead, e.g. BSMD1206-110-24V C2798026 (1.1 A hold)"
 			(at 111.76 162.56 0)
 			(effects
 				(font
@@ -10327,7 +10158,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2798026"
+		(property "LCSC" "C17888"
 			(at 111.76 162.56 0)
 			(effects
 				(font
@@ -10491,7 +10322,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "TVS 13 V standoff on the 12 V output"
+		(property "Description" "SMF13A TVS (JLC Preferred) on the 12 V output"
 			(at 132.08 175.26 0)
 			(effects
 				(font
@@ -10500,7 +10331,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C353315"
+		(property "LCSC" "C41376087"
 			(at 132.08 175.26 0)
 			(effects
 				(font
@@ -10703,7 +10534,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "C64_PD_PSU:R_0402_1005Metric"
+		(property "Footprint" "C64_PD_PSU:R_0603_1608Metric"
 			(at 101.6 187.96 0)
 			(effects
 				(font
@@ -10730,7 +10561,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C21190"
 			(at 101.6 187.96 0)
 			(effects
 				(font
@@ -12244,7 +12075,7 @@
 			)
 		)
 	)
-	(text "C64 USB-C PD Power Adapter v0.2 (DC only, no 50/60 Hz: the C64 TOD clock will not tick from mains)\nNeeds a USB-C PD charger offering 15 V (>= 3 A / 45 W recommended). U1 (CH224A) requests 15 V via R1 = 56k.\nQ1 connects the 15 V rail only after the PD contract (PG low). U2 and U3 start only above ~13.2 V (EN UVLO),\nso a plain 5 V charger, or one that falls back to 9/12 V, never powers the C64.\nDIN: 4+5 = +5.08 V (U2, F1 2 A PTC, D1 TVS), 6 = +12.3 V DC (U3, F2 1.1 A PTC, D2 TVS) into the C64 \"9 VAC\" bridge, 1/2/3/7 = GND.\n12 V DC = the peak of the stock 9 VAC, so user port pins 10/11 see no more than an original PSU gives (but DC, not AC)."
+	(text "C64 USB-C PD Power Adapter v0.3 (DC only, no 50/60 Hz: the C64 TOD clock will not tick from mains)\nNeeds a USB-C PD charger offering 15 V (>= 3 A / 45 W recommended). U1 (CH224A) requests 15 V via R1 = 56k.\nQ1 connects the 15 V rail only after the PD contract (PG low). U2 and U3 start only above ~13.2 V (EN UVLO),\nso a plain 5 V charger, or one that falls back to 9/12 V, never powers the C64.\nDIN: 4+5 = +5.08 V (U2, D1 TVS), 6 = +12.3 V DC (U3, D2 TVS) into the C64 \"9 VAC\" bridge, 1/2/3/7 = GND.\n12 V DC = the peak of the stock 9 VAC, so user port pins 10/11 see no more than an original PSU gives (but DC, not AC)."
 		(exclude_from_sim no)
 		(at 25.4 22.86 0)
 		(effects

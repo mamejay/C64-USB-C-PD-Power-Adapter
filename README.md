@@ -4,19 +4,27 @@ A compact replacement power supply for the Commodore 64. It plugs straight into 
 
 ![bottom](Docs/bottom_3d_routed.png)
 
-**Status: v0.2, routed, JLCPCB files generated, not yet built or tested.**
+**Status: v0.3, routed, JLCPCB files generated, not yet built or tested.**
+
+**v0.3 (cost-down):**
+- All passives are 0603 JLC Basic parts.
+- The TVS diodes are JLC Preferred parts.
+- Both bucks share one inductor (FXL0530).
+- The PTC fuses became 0R links. The 1206 footprints still take a PTC if you want one.
+- 5 V feedback is now 75k/10k (5.07 V).
+- Extended parts went from 15 to 4: CH224A, TPS54302, USB-C, inductor.
 
 ## What it does
 | Output | DIN pin | Source |
 |---|---|---|
-| +5.08 V, up to 3 A | 4, 5 | TPS54302 buck (U2) |
+| +5.07 V, up to 3 A | 4, 5 | TPS54302 buck (U2) |
 | +12.3 V DC, ~1 A | 6 (the C64's "9 VAC" input) | TPS54302 buck (U3) |
 | GND | 1, 2, 3, 7 | |
 
 - **PD sink:** a WCH CH224A requests 15 V from the charger (R1 = 56k).
 - **Output switch:** a P-MOSFET (Q1) connects the 15 V rail only once the PD contract is made (PG low). Its Miller cap gives a soft ~10 ms ramp.
 - **Lockout:** both bucks have an EN-pin UVLO that starts at ~13.2 V. A plain 5 V charger, or one that falls back to 9/12 V, never powers the C64.
-- **Protection:** each output has a PTC fuse and a TVS diode.
+- **Protection:** each output has a TVS diode. F1/F2 are 0R links by default; fit 1206 PTCs there if wanted.
 
 ### Why 12 V DC on pin 6
 The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (breadbin) or 7809 (C64C).
@@ -42,13 +50,14 @@ The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (brea
 - `Hardware/KiCad/`: KiCad 10 project (schematic, routed PCB, project libraries).
 - `Hardware/scripts/`: the generators and routing pipeline:
   - `gen_sch.py`: schematic.
-  - `gen_pcb.py`: initial placement, before the board was re-oriented by hand.
-  - `prep_v02.py`, `sync_nets.py`, `set_netclasses.py`, `autoroute_v02.sh` (Freerouting 2.5.0), `gnd_pours.py`.
+  - `build_v03.py`: board build from the saved placement (`place_v02.json` + `overrides_v03.json`).
+  - `add_holes.py`: mounting holes.
+  - `set_netclasses.py`, then `autoroute_v02.sh` (Freerouting 2.5.0), then `gnd_pours.py`, then `texts_upright.py`.
   - `make_din_fp.py`: DIN-7 footprint.
   - `make_fab.py`: JLC outputs.
   - The generators rebuild from scratch; don't re-run them over hand edits.
 - `JLCPCB Output/`: Gerbers zip, BOM, CPL and `ORDER NOTES.txt`.
-  - **Check bottom-side part rotations (U1, U2/U3, Q1, J1) in JLC's placement preview before ordering.**
+  - Bottom-side rotation fixes (U1-U3 +90, D1-D3 +180) are already applied. Give the preview a quick check anyway.
 
 ## To test on first build
 - What the CH224A does with a charger that doesn't offer 15 V (fallback level, PG behaviour).

@@ -96,15 +96,16 @@ def pins_of(sym):
 FP = lambda n: FPLIB + n
 PWR = {'GND', '+5V', '+12V', 'VBUS'}
 two = lambda a, b: {'1': a, '2': b}
-R0402, C0402, C0603, C0805 = FP('R_0402_1005Metric'), FP('C_0402_1005Metric'), FP('C_0603_1608Metric'), FP('C_0805_2012Metric')
-LCSC = {'1k': 'C11702', '5.1k': 'C25905', '13.3k': 'C122547', '47k': 'C25792', '56k': 'C25796', '100k': 'C25741', '470k': 'C25790',
-        '75pF': 'C37809', '100nF': 'C1525', '100nF/50V': 'C14663', '1uF/50V': 'C15849',
-        '10uF/25V': 'C15850', '22uF/25V': 'C45783'}
-CFP = {'75pF': C0402, '100nF': C0402, '100nF/50V': C0603, '1uF/50V': C0603, '10uF/25V': C0805, '22uF/25V': C0805}
+R0603, C0603, C0805, R1206 = FP('R_0603_1608Metric'), FP('C_0603_1608Metric'), FP('C_0805_2012Metric'), FP('R_1206_3216Metric')
+# v0.3: all JLC Basic parts (0603 passives), to cut the extended-part fees
+LCSC = {'1k': 'C21190', '5.1k': 'C23186', '10k': 'C25804', '47k': 'C25819', '56k': 'C23206', '75k': 'C23242',
+        '100k': 'C25803', '470k': 'C23178', '0R': 'C17888',
+        '100pF': 'C14858', '100nF/50V': 'C14663', '1uF/50V': 'C15849', '10uF/25V': 'C15850', '22uF/25V': 'C45783'}
+CFP = {'100pF': C0603, '100nF/50V': C0603, '1uF/50V': C0603, '10uF/25V': C0805, '22uF/25V': C0805}
 
 
 def R(ref, val, xy, a, b, desc=''):
-    return (ref, 'R', val, R0402, xy, two(a, b), {'LCSC': LCSC[val], 'Description': desc})
+    return (ref, 'R', val, R1206 if val == '0R' else R0603, xy, two(a, b), {'LCSC': LCSC[val], 'Description': desc})
 
 
 def C(ref, val, xy, a, b, desc=''):
@@ -138,14 +139,14 @@ PARTS = [
     C('C4', '100nF/50V', (167.64, 101.6), 'VSW', 'GND', 'buck input HF, next to U2 pin 3'),
     R('R4', '470k', (167.64, 127.0), 'VSW', 'EN', 'EN UVLO top: start ~13.2 V, stop ~11.7 V'),
     R('R5', '47k', (167.64, 149.86), 'EN', 'GND', 'EN UVLO bottom'),
-    C('C5', '100nF', (226.06, 91.44), 'BOOT', 'SW', 'bootstrap'),
-    ('L1', 'L', '10uH', FP('L_Changjiang_FXL0630'), (226.06, 111.76), two('SW', '5V_BUCK'),
-     {'LCSC': 'C167223', 'Description': 'cjiang FXL0630-100-M 10 uH 4.5 A / Isat 5.5 A molded, 7x6.6 mm'}),
+    C('C5', '100nF/50V', (226.06, 91.44), 'BOOT', 'SW', 'bootstrap'),
+    ('L1', 'L', '10uH', FP('L_Changjiang_FXL0530'), (226.06, 111.76), two('SW', '5V_BUCK'),
+     {'LCSC': 'C177248', 'Description': 'cjiang FXL0530-100-M 10 uH 3.2 A / Isat 3.5 A molded, 5.4x5.2 mm (same part as L2: one extended line)'}),
     C('C6', '22uF/25V', (246.38, 127.0), '5V_BUCK', 'GND', 'buck output'),
     C('C7', '22uF/25V', (256.54, 127.0), '5V_BUCK', 'GND', 'buck output'),
-    R('R6', '100k', (226.06, 137.16), '5V_BUCK', 'FB', 'FB top: Vout = 0.596 x (1 + 100k/13.3k) = 5.08 V'),
-    R('R7', '13.3k', (226.06, 157.48), 'FB', 'GND', 'FB bottom'),
-    C('C8', '75pF', (210.82, 137.16), '5V_BUCK', 'FB', 'feed-forward (TI reference design)'),
+    R('R6', '75k', (226.06, 137.16), '5V_BUCK', 'FB', 'FB top: Vout = 0.596 x (1 + 75k/10k) = 5.07 V (Basic values)'),
+    R('R7', '10k', (226.06, 157.48), 'FB', 'GND', 'FB bottom'),
+    C('C8', '100pF', (210.82, 137.16), '5V_BUCK', 'FB', 'feed-forward (TI reference design)'),
     # 12 V buck for DIN pin 6 (same reference design, FB 100k/5.1k)
     ('U3', 'TPS54302', 'TPS54302DDCR', FP('TSOT-23-6'), (198.12, 238.76),
      {'3': 'VSW', '1': 'GND', '2': 'SW2', '6': 'BOOT2', '4': 'FB2', '5': 'EN2'},
@@ -154,23 +155,21 @@ PARTS = [
     C('C10', '100nF/50V', (167.64, 228.6), 'VSW', 'GND', 'buck 2 input HF, next to U3 pin 3'),
     R('R9', '470k', (182.88, 254.0), 'VSW', 'EN2', 'EN2 UVLO top: start ~13.2 V, stop ~11.7 V'),
     R('R10', '47k', (182.88, 269.24), 'EN2', 'GND', 'EN2 UVLO bottom'),
-    C('C11', '100nF', (226.06, 226.06), 'BOOT2', 'SW2', 'bootstrap'),
+    C('C11', '100nF/50V', (226.06, 226.06), 'BOOT2', 'SW2', 'bootstrap'),
     ('L2', 'L', '10uH', FP('L_Changjiang_FXL0530'), (226.06, 238.76), two('SW2', '12V_BUCK'),
      {'LCSC': 'C177248', 'Description': 'cjiang FXL0530-100-M 10 uH 3.2 A / Isat 3.5 A molded, 5.4x5.2 mm'}),
     C('C12', '22uF/25V', (246.38, 251.46), '12V_BUCK', 'GND', 'buck 2 output'),
     C('C13', '22uF/25V', (256.54, 251.46), '12V_BUCK', 'GND', 'buck 2 output'),
     R('R11', '100k', (226.06, 256.54), '12V_BUCK', 'FB2', 'FB2 top: Vout = 0.596 x (1 + 100k/5.1k) = 12.28 V (7.15k -> 8.9 V if 9 V is ever wanted)'),
     R('R12', '5.1k', (226.06, 271.78), 'FB2', 'GND', 'FB2 bottom'),
-    C('C14', '75pF', (210.82, 256.54), '12V_BUCK', 'FB2', 'feed-forward'),
+    C('C14', '100pF', (210.82, 256.54), '12V_BUCK', 'FB2', 'feed-forward'),
     # output protection
-    ('F1', 'Polyfuse', '2A', FP('Fuse_1206_3216Metric'), (60.96, 162.56), two('5V_BUCK', '+5V'),
-     {'LCSC': 'C22374899', 'Description': 'LUTE 1206L200/16NR PTC, 2 A hold / 3.5 A trip, 16 V'}),
+    R('F1', '0R', (60.96, 162.56), '5V_BUCK', '+5V', '0 R link (JLC Basic). Optional: fit a 1206 PTC here instead, e.g. LUTE 1206L200/16NR C22374899 (2 A hold)'),
     ('D1', 'D_Zener', 'SMF5.0A', FP('D_SOD-123F'), (81.28, 175.26), two('+5V', 'GND'),
-     {'LCSC': 'C193402', 'Description': 'TVS 5 V standoff: clamps +5 V and trips F1 if the buck ever fails high'}),
-    ('F2', 'Polyfuse', '1.1A', FP('Fuse_1206_3216Metric'), (111.76, 162.56), two('12V_BUCK', '+12V'),
-     {'LCSC': 'C2798026', 'Description': 'BHFUSE BSMD1206-110-24V PTC, 1.1 A hold / 2.2 A trip, 24 V'}),
+     {'LCSC': 'C19077497', 'Description': 'SMF5.0A TVS (JLC Preferred), clamps +5 V if the buck ever fails high'}),
+    R('F2', '0R', (111.76, 162.56), '12V_BUCK', '+12V', '0 R link (JLC Basic). Optional: fit a 1206 PTC here instead, e.g. BSMD1206-110-24V C2798026 (1.1 A hold)'),
     ('D2', 'D_Zener', 'SMF13A', FP('D_SOD-123F'), (132.08, 175.26), two('+12V', 'GND'),
-     {'LCSC': 'C353315', 'Description': 'TVS 13 V standoff on the 12 V output'}),
+     {'LCSC': 'C41376087', 'Description': 'SMF13A TVS (JLC Preferred) on the 12 V output'}),
     R('R8', '1k', (101.6, 187.96), '+5V', 'LED_A', 'power LED'),
     ('D3', 'LED', 'GREEN', FP('LED_0805_2012Metric'), (114.3, 187.96), {'1': 'GND', '2': 'LED_A'},
      {'LCSC': 'C2297', 'Description': 'power LED, green 0805'}),
@@ -302,18 +301,18 @@ for i, net in enumerate(['VBUS', 'GND', 'VSW', '+5V', '+12V']):
                       ['stroke', ['width', 0], ['type', 'default']], ['uuid', uid()]])
         label(net, x, y + 2.54, (0, 1))
 
-NOTE = ('C64 USB-C PD Power Adapter v0.2 (DC only, no 50/60 Hz: the C64 TOD clock will not tick from mains)\n'
+NOTE = ('C64 USB-C PD Power Adapter v0.3 (DC only, no 50/60 Hz: the C64 TOD clock will not tick from mains)\n'
         'Needs a USB-C PD charger offering 15 V (>= 3 A / 45 W recommended). U1 (CH224A) requests 15 V via R1 = 56k.\n'
         'Q1 connects the 15 V rail only after the PD contract (PG low). U2 and U3 start only above ~13.2 V (EN UVLO),\n'
         'so a plain 5 V charger, or one that falls back to 9/12 V, never powers the C64.\n'
-        'DIN: 4+5 = +5.08 V (U2, F1 2 A PTC, D1 TVS), 6 = +12.3 V DC (U3, F2 1.1 A PTC, D2 TVS) into the C64 "9 VAC" bridge, 1/2/3/7 = GND.\n'
+        'DIN: 4+5 = +5.08 V (U2, D1 TVS), 6 = +12.3 V DC (U3, D2 TVS) into the C64 "9 VAC" bridge, 1/2/3/7 = GND.\n'
         '12 V DC = the peak of the stock 9 VAC, so user port pins 10/11 see no more than an original PSU gives (but DC, not AC).')
 items.append(['text', Q(NOTE), ['exclude_from_sim', 'no'], ['at', 25.4, 22.86, 0],
               ['effects', ['font', ['size', 1.27, 1.27]], ['justify', 'left', 'bottom']], ['uuid', uid()]])
 
 sch = ['kicad_sch', ['version', 20250114], ['generator', Q('eeschema')], ['generator_version', Q('10.0')],
        ['uuid', Q(ROOT)], ['paper', Q('A3')],
-       ['title_block', ['title', Q('C64 USB-C PD Power Adapter')], ['date', Q('2026-10-27')], ['rev', Q('0.2')],
+       ['title_block', ['title', Q('C64 USB-C PD Power Adapter')], ['date', Q('2026-10-27')], ['rev', Q('0.3')],
         ['comment', 1, Q('USB-C PD 15 V -> C64 7-pin DIN: +5 V and +12 V DC (on the 9 VAC input), two TPS54302 bucks')]],
        ['lib_symbols'] + [[s[0], Q(LIBNICK + ':' + s[1])] + s[2:] for s in libsyms.values()]] + items + \
       [['sheet_instances', ['path', Q('/'), ['page', Q('1')]]], ['embedded_fonts', 'no']]

@@ -1,9 +1,9 @@
-"""Build the unrouted C64 USB-C PD Power Adapter board (v0.2) from the schematic + netlist.
-2-layer. The male DIN-7 (J2) sits on the TOP side with its pins soldered through, like the DeadTest serial
-board; every SMD part is on the BOTTOM so JLC can assemble the whole board in one pass (J2 hand-soldered).
-The board lies flat against the C64's side: DIN at the front end, USB-C mouth at the rear end.
-usage: python3 -I gen_pcb.py <project dir>     (needs <project dir>/net.net from kicad-cli)"""
-import sys, os
+"""Rebuild the board from the schematic + netlist with a saved placement (v0.3: 0603 passives, FXL0530 for L1).
+Placement, orientation and side for every part come from place.json (dumped from the user-oriented v0.2 board by
+dump_place.py); an optional overrides.json nudges parts whose bigger 0603 footprints now collide.
+Board outline = the v0.2 rectangle (with the mounting-hole strip); holes are added afterwards by add_holes.py.
+usage: python3 -I build_v03.py <project dir> <place.json> [overrides.json]"""
+import sys, os, json
 import pcbnew
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sexp import parse, find, first
@@ -13,52 +13,13 @@ NAME = 'C64 USB-C PD Power Adapter'
 LIB = 'C64_PD_PSU'
 mm = pcbnew.FromMM
 V = lambda x, y: pcbnew.VECTOR2I(mm(x), mm(y))
-
-X0, Y0, Y1 = 100.0, 100.0, 124.0
-JX = 142.4                      # USB-C centre; flipped + rot 270 puts the mouth on +x
-X1 = round(JX + 4.2 - 0.5, 2)   # mouth 0.5 mm over the rear edge
-DINX, DINY = 108.0, 112.0       # plug body (r 6.6) 1.4 mm inside the front edge
-B = True
-# ref: (x, y, rot, bottom)   coordinates are seen from the top
-PLACE = {
-    'J2': (DINX, DINY, 0, False),       # notch towards the board's bottom edge (+y)
-    'J1': (JX, DINY, 270, B),
-    # output protection in the corners above / below the DIN (its solder side is ringed by a 5.2 mm B.CrtYd)
-    'F1': (104.4, 102.2, 0, B), 'D1': (110.2, 102.2, 0, B),
-    'F2': (104.4, 121.8, 0, B), 'D2': (110.2, 121.8, 0, B),
-    # 5 V buck, top half
-    'L1': (118.6, 104.4, 0, B),
-    'U2': (126.0, 103.0, 180, B),
-    'C5': (125.9, 106.0, 0, B),
-    'C3': (130.6, 102.2, 90, B),
-    'C4': (129.4, 106.0, 0, B),
-    'R4': (132.6, 102.2, 90, B), 'R5': (133.8, 102.2, 90, B),
-    'C6': (116.0, 109.6, 0, B), 'C7': (120.0, 109.6, 0, B),
-    'R6': (124.8, 109.6, 0, B), 'R7': (127.2, 109.6, 0, B), 'C8': (126.0, 110.9, 0, B),
-    # 12 V buck, bottom half
-    'L2': (117.6, 118.6, 0, B),
-    'U3': (124.0, 120.0, 180, B),
-    'C11': (124.0, 117.2, 0, B),
-    'C9': (128.6, 121.6, 0, B),
-    'C10': (128.6, 118.6, 0, B),
-    'R9': (131.6, 120.0, 90, B), 'R10': (132.8, 120.0, 90, B),
-    'C12': (116.0, 113.8, 0, B), 'C13': (120.0, 113.8, 0, B),
-    'R11': (124.0, 114.4, 0, B), 'R12': (126.4, 114.4, 0, B), 'C14': (125.2, 115.7, 0, B),
-    # power LED
-    'D3': (131.5, 110.6, 0, B), 'R8': (131.5, 112.8, 0, B),
-    # PD sink above the USB-C, output switch below it
-    'U1': (142.0, 103.6, 0, B),
-    'C1': (136.6, 101.6, 0, B),
-    'R1': (136.6, 104.2, 0, B),
-    'Q1': (141.0, 120.6, 0, B),
-    'R2': (136.6, 119.4, 0, B), 'R3': (136.6, 121.0, 0, B),
-    'C2': (133.2, 117.0, 0, B),
-}
-SILK = [  # text, x, y, layers, size[, angle]   (top side is empty apart from the DIN)
-    ('C64 USB-C PD PSU v0.2', 128.0, 104.0, 'F', 1.0),
-    ('DIN: GND 1237  +5V 45  +12V 6', 125.5, 107.0, 'F', 0.8),
-    ('USB-C PD 15V in', 133.0, 112.0, 'F', 0.8),
-]
+J = json.load(open(sys.argv[2]))
+OVR = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else {}
+X0, Y0, X1, Y1 = 100.9, 95.0, 147.0, 125.0
+PLACE = {r: tuple(v) for r, v in J['fps'].items() if not r.startswith('H')}
+for r, v in OVR.items():
+    PLACE[r] = tuple(v)
+SILK = [(t.replace('v0.2', 'v0.3'), x, y, 'F', size) for t, x, y, layer, size in J['texts']]
 
 sch = parse(open(f'{D}/{NAME}.kicad_sch').read())[0]
 syms = {}
@@ -133,14 +94,7 @@ for txt, x, y, layers, size, *ang in SILK:
         if ang: t.SetTextAngleDegrees(ang[0])
         board.Add(t)
 
-for layer in (pcbnew.F_Cu, pcbnew.B_Cu):
-    z = pcbnew.ZONE(board); z.SetLayer(layer); z.SetNet(getnet('GND')); z.SetLocalClearance(mm(0.3))
-    z.SetMinThickness(mm(0.25)); z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
-    ol = z.Outline(); ol.NewOutline()
-    for x, y in ((X0, Y0), (X1, Y0), (X1, Y1), (X0, Y1)):
-        ol.Append(mm(x), mm(y))
-    board.Add(z)
-
+# no zones here: GND is routed as tracks first, gnd_pours.py adds the pours after routing
 board.Save(f'{D}/{NAME}.kicad_pcb')
 print('board %.2f x %.2f mm' % (X1 - X0, Y1 - Y0))
 for fp in board.GetFootprints():

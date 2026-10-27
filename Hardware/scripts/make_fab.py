@@ -35,7 +35,7 @@ for s in find(sch, 'symbol'):
     parts[ref] = p
 def fpname(p):
     f = p['Footprint'].split(':')[1]
-    m = re.search(r'(0402|0603|0805|1206|SOD-123F|TSOT-23-6|SOT-23|SSOP-10|FXL0630|FXL0530|TYPE-C-31-M-12)', f)
+    m = re.search(r'(0603|0805|1206|SOD-123F|TSOT-23-6|SOT-23|SSOP-10|FXL0530|TYPE-C-31-M-12)', f)
     return m.group(1) if m else f
 groups = {}
 for ref, p in parts.items():
@@ -49,8 +49,8 @@ with open(f'{OUT}/{N} - BOM.csv', 'w', newline='') as f:
 
 # ---- CPL from KiCad positions. JLC's bottom-side models need extra rotations for some parts.
 # LED / diode +180 comes from the C64 mouse v1.1 board (same KiCad footprint conventions, confirmed in JLC's
-# preview 2026-10-23: SOD-323 and LED_0805 both +180). Everything else: raw KiCad rotation, check the preview.
-JLC_ROT_FIX = {'D1': 180, 'D2': 180, 'D3': 180}
+# preview 2026-10-23: SOD-323 and LED_0805 both +180). Q1 and J1 were right with the raw rotation (user, 2026-10-27).
+JLC_ROT_FIX = {'D1': 180, 'D2': 180, 'D3': 180, 'U1': 90, 'U2': 90, 'U3': 90}   # U1-U3 +90 confirmed by the user in JLC's preview 2026-10-27
 raw = f'{OUT}/pos_raw.csv'
 run('kicad-cli', 'pcb', 'export', 'pos', '-o', raw, '--format', 'csv', '--units', 'mm', '--side', 'both', PCB)
 with open(raw) as f, open(f'{OUT}/{N} - CPL.csv', 'w', newline='') as g:

@@ -1,28 +1,20 @@
-C64 USB-C PD Power Adapter v0.2 - JLCPCB order notes (generated 2026-10-27)
+C64 USB-C PD Power Adapter v0.3 - JLCPCB order notes (generated 2026-10-27)
 
 PCB
   Upload:      "C64 USB-C PD Power Adapter - Gerbers.zip"
-  Layers 2, size 46.1 x 30.0 mm, 1.6 mm FR-4, 1 oz, HASL or ENIG.
+  Layers 2, size 46.1 x 30.0 mm, 1.6 mm FR-4, 1 oz.
   Holes: 7x 1.6 mm plated (DIN-7, J2) + 2x 2.7 mm non-plated (M2.5 mounting) + 0.4 mm vias.
 
 Assembly (PCBA)
-  Side:        BOTTOM only (every SMD part is on the bottom; nothing to assemble on top)
-  BOM:         "C64 USB-C PD Power Adapter - BOM.csv"   (24 lines, 38 parts)
+  Side:        BOTTOM only
+  BOM:         "C64 USB-C PD Power Adapter - BOM.csv"   (22 lines, 38 parts)
   CPL:         "C64 USB-C PD Power Adapter - CPL.csv"
-  Not assembled (hand-solder): J2 = 7-pin DIN male (DIN 45329) plug insert, from the top side.
-  Mounting holes H1/H2 are board-only (not in BOM/CPL).
+  Not assembled: J2 = 7-pin DIN male plug insert (hand-solder from the top side). H1/H2 are holes only.
 
-CHECK IN JLC'S PLACEMENT PREVIEW BEFORE ORDERING (bottom-side rotations are not standardised)
-  Already corrected: D1, D2 (SOD-123F TVS) and D3 (LED) +180, as on the C64 mouse board.
-  Check pin 1 / polarity on:
-    U1  CH224A (ESSOP-10)   pin 1 = VHV, next to C1
-    U2, U3  TPS54302 (TSOT-23-6)
-    Q1  AO3401A (SOT-23)    the mouse board's MMBT3904 needed +180, its XC6206 did not
-    D1, D2  TVS: cathode band must face the +5V / +12V side (away from GND)
-    D3  LED: cathode to GND
-    J1  USB-C: mouth must overhang the left board edge; check its centre offset too
-  Passives are non-polar (0/180 makes no difference).
-  If a part is wrong, rotate it in JLC's editor and note the angle (edit JLC_ROT_FIX in scripts/make_fab.py).
+Rotations: U1, U2, U3 +90 (confirmed in JLC's preview for v0.2) and D1/D2/D3 +180 are already in the CPL.
+Q1 and J1 were right as exported. Still give the preview a quick look: L1 is now the smaller FXL0530.
 
-Extended parts (setup fee each): most ICs/connectors/inductors/TVS/PTC and several resistor values.
-Stock checked 2026-10-27; CH224A C42459160 had ~11.7k.
+Extended parts (setup fee each), v0.3 = 4 lines:
+  U1 CH224A C42459160, U2/U3 TPS54302DDCR C311983, J1 USB-C C165948, L1/L2 FXL0530-100-M C177248
+  D1 SMF5.0A C19077497 and D2 SMF13A C41376087 are "Preferred" (no setup fee). Everything else is Basic.
+  F1/F2 are 0R links (Basic C17888); a 1206 PTC can be fitted there instead if wanted.
