@@ -2,7 +2,7 @@
 # Autoroute the prepped v0.2 board in place: DSN export, Freerouting, SES import, neck-down fix, GND pours.
 # usage: autoroute_v02.sh <board.kicad_pcb> [passes]
 set -e
-B=$(realpath "$1"); D=$(dirname "$B"); S=$(dirname "$(realpath "$0")"); FR=~/claude/tools/freerouting/freerouting-2.5.0.jar
+B=$(realpath "$1"); D=$(dirname "$B"); S=$(dirname "$(realpath "$0")"); FR=${FREEROUTING_JAR:-freerouting-2.5.0.jar}   # path to the Freerouting 2.5.0 jar
 cd "$D"
 python3 -I - "$B" <<'PY' 2>&1 | grep -v -E "assert|leak" || true
 import sys, os, pcbnew

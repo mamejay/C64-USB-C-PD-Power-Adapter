@@ -67,6 +67,7 @@ The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (brea
 - Desk/power-switch clearance on breadbin and C64C machines.
 
 ## Licence
-[CC BY-NC-SA 4.0](LICENSE). Non-commercial use only; share derivatives under the same licence.
+[CC BY-NC-SA 4.0](LICENSE): **personal and non-commercial use only. Selling boards, kits, assembled units, cases or modified versions is not permitted.**
+See [NOTICE.md](NOTICE.md) for the plain-English terms. Commercial use needs a separate written licence from the author.
 
 This is an independent design. The commercial Sordan/RetroJoy adapter and Side Projects Lab's PD-64 (CC BY-NC-ND) were looked at for ideas only. No files or circuitry were copied from either.
