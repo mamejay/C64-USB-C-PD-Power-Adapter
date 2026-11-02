@@ -1,0 +1,20 @@
+C128 USB-C PD Power Adapter v0.1 - JLCPCB order notes (2026-11-02)
+
+PCB: 2 layers, 46.1 x 34.5 mm, 1.6 mm FR4, 1 oz, HASL or ENIG, any colour. Upload "... - Gerbers.zip".
+Assembly: PCBA, BOTTOM side only. Upload the BOM and CPL csv files.
+  J2 (power plug) is NOT in the BOM/CPL - hand-solder it (see below).
+  Extended parts (6): CH224A, SY8205FCC, TPS54302, USB-C HRO C165948, FXL0530 10uH, CKCS8040 4.7uH.
+
+CHECK IN JLC's PLACEMENT PREVIEW before paying:
+  - U1 and U3 already have +90 applied (confirmed on the C64 board).
+  - U2 (SY8205, SOIC-8 with exposed pad) is NEW: rotation not yet confirmed. Pin 1 dot must match the board's pin-1 mark.
+  - D1-D3 already +180 (cathode bar as on the C64 board).
+
+J2: round 8-pin DIN male insert (7 around + centre pin). Pull the 3 pins that have no hole on the board
+(the two side pins and the bottom pin); keep the centre and the 4 diagonal pins. Plug on the TOP side,
+key notch towards the mounting-hole edge. Trim the pins on the solder side to <= 3.5 mm.
+!! A round insert has no key in the C128's square socket: it can be pushed in rotated, and a 90-degree
+!! rotation puts 12 V on the C128's +5 V rail. Use a keyed case/shroud, and mark the top.
+
+Before the first power-up on a C128 (adapter NOT plugged in, USB-C charger connected):
+  DIN pin 1 = +5.10 V, pin 3 = +12.3 V, pins 2/4/5 = 0 V (GND).

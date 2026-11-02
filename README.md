@@ -75,6 +75,12 @@ The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (brea
 
 **Measuring tip:** pin 6 is DC, even though the C64 labels it "9 VAC". Measure it on the meter's **DC** range: on the AC range a meter shows a misleading figure, about 8 V here.
 
+## C128 version
+See [`C128 Version/`](C128%20Version/) for the Commodore 128 variant (v0.1, not yet built). It has:
+- a square 5-pin socket, plugged with a round DIN-8 insert;
+- a 5 A SY8205 regulator for +5 V;
+- the same USB-PD front end and 12 V rail as this board.
+
 ## Licence
 [CC BY-NC-SA 4.0](LICENSE): **personal and non-commercial use only. Selling boards, kits, assembled units, cases or modified versions is not permitted.**
 See [NOTICE.md](NOTICE.md) for the plain-English terms. Commercial use needs a separate written licence from the author.
