@@ -4,7 +4,7 @@ A compact replacement power supply for the Commodore 64. It plugs straight into 
 
 ![bottom](Docs/bottom_3d_routed.png)
 
-**Status: v0.3, routed, JLCPCB files generated, not yet built or tested.**
+**Status: v0.3 built and tested — working on a real C64.** Measured with the C64 running: 5.07 V on pins 4/5, 12.3 V on pin 6 (12.3 V with no load as well).
 
 **v0.3 (cost-down):**
 - All passives are 0603 JLC Basic parts.
@@ -60,11 +60,20 @@ The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (brea
 - `JLCPCB Output/`: Gerbers zip, BOM, CPL and `ORDER NOTES.txt`.
   - Bottom-side rotation fixes (U1-U3 +90, D1-D3 +180) are already applied. Give the preview a quick check anyway.
 
-## To test on first build
+## Test results
+**Tested OK (first build, Nov 2026):**
+- Boots a C64 from a Dell USB-C laptop charger.
+- Output voltages hold under load: 5.07 V on pins 4/5, 12.3 V on pin 6.
+- The JLC assembly needed no fixes.
+
+**Still to test:**
+- SID audio quality and datasette motor speed.
 - What the CH224A does with a charger that doesn't offer 15 V (fallback level, PG behaviour).
 - Inrush through Q1 into the C64's bulk capacitors.
-- The DIN insert's pin diameter against the 1.6 mm holes.
 - Desk/power-switch clearance on breadbin and C64C machines.
+- The 3D-printed case (not yet printed).
+
+**Measuring tip:** pin 6 is DC, even though the C64 labels it "9 VAC". Measure it on the meter's **DC** range: on the AC range a meter shows a misleading figure, about 8 V here.
 
 ## Licence
 [CC BY-NC-SA 4.0](LICENSE): **personal and non-commercial use only. Selling boards, kits, assembled units, cases or modified versions is not permitted.**
