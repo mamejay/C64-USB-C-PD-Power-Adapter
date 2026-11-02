@@ -2329,6 +2329,252 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "C128_PD_PSU:TPS25947"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -7.62 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TPS25947"
+				(at 2.54 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "TI TPS25947 eFuse, 2.7-23 V, 0.5-6 A, adjustable OVLO"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TPS25947_0_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "TPS25947_1_1"
+				(pin power_in line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "EN/UVLO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "OVLO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "DVDT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "AUXOFF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "~{FLT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "ILM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "ITIMER"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "C128_PD_PSU:+5V"
 			(power global)
 			(pin_numbers
@@ -7638,70 +7884,15 @@
 		)
 		(uuid "fa630c54-4d03-5c14-8603-01dbd044a99d")
 	)
-	(symbol
-		(lib_id "C128_PD_PSU:+5V")
-		(at 226.06 118.11 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
+	(label "5V_BUCK"
+		(at 226.06 118.11 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
 		(uuid "3cc66323-5a77-5353-a785-db95ec38cd11")
-		(property "Reference" "#PWR25"
-			(at 228.6 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 226.06 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 226.06 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 226.06 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bdea5c3c-3b4a-59e7-b1d5-1876744e8dcc")
-		)
-		(instances
-			(project "C128 USB-C PD Power Adapter"
-				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR25")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:C")
@@ -7711,7 +7902,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f8bf053d-6a11-5972-9987-896672902282")
+		(uuid "bdea5c3c-3b4a-59e7-b1d5-1876744e8dcc")
 		(property "Reference" "C6"
 			(at 248.92 125.73 0)
 			(effects
@@ -7767,10 +7958,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "0c9d33dc-51e4-5f8b-9f3a-5828a9cc5d69")
+			(uuid "f8bf053d-6a11-5972-9987-896672902282")
 		)
 		(pin "2"
-			(uuid "cdc71c42-fcd4-53ea-9d0f-51e0fc6fc186")
+			(uuid "0c9d33dc-51e4-5f8b-9f3a-5828a9cc5d69")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -7790,72 +7981,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "582bacde-c3d9-5669-add2-35276b271393")
+		(uuid "cdc71c42-fcd4-53ea-9d0f-51e0fc6fc186")
 	)
-	(symbol
-		(lib_id "C128_PD_PSU:+5V")
-		(at 246.38 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(uuid "84adefd5-5aa1-5fbc-97c1-39aaa14546bd")
-		(property "Reference" "#PWR26"
-			(at 248.92 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+	(label "5V_BUCK"
+		(at 246.38 120.65 90)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "+5V"
-			(at 246.38 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 246.38 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 246.38 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3cba3ab5-8898-5393-8c96-00bda38e93b9")
-		)
-		(instances
-			(project "C128 USB-C PD Power Adapter"
-				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR26")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "582bacde-c3d9-5669-add2-35276b271393")
 	)
 	(wire
 		(pts
@@ -7866,7 +8002,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f0556ffa-4517-5891-84e2-eef90253a681")
+		(uuid "84adefd5-5aa1-5fbc-97c1-39aaa14546bd")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -7876,8 +8012,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "a78680e5-cf5c-5043-8140-dfc5224b0206")
-		(property "Reference" "#PWR27"
+		(uuid "3cba3ab5-8898-5393-8c96-00bda38e93b9")
+		(property "Reference" "#PWR25"
 			(at 248.92 128.27 0)
 			(effects
 				(font
@@ -7922,12 +8058,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "db8efcd7-ae68-5ed9-b504-43604b8401c4")
+			(uuid "f0556ffa-4517-5891-84e2-eef90253a681")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
 				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR27")
+					(reference "#PWR25")
 					(unit 1)
 				)
 			)
@@ -7941,7 +8077,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ae832105-6880-59ac-95b1-1700207aa2a8")
+		(uuid "a78680e5-cf5c-5043-8140-dfc5224b0206")
 		(property "Reference" "C7"
 			(at 259.08 125.73 0)
 			(effects
@@ -7997,10 +8133,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "235cbfaf-711e-51cd-af01-f6e8af253056")
+			(uuid "db8efcd7-ae68-5ed9-b504-43604b8401c4")
 		)
 		(pin "2"
-			(uuid "5dfd2a7f-66ba-557f-b94a-bb3158e0b4d1")
+			(uuid "ae832105-6880-59ac-95b1-1700207aa2a8")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8020,72 +8156,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9718a2bd-528a-5d18-aaa1-3d07396a9afe")
+		(uuid "235cbfaf-711e-51cd-af01-f6e8af253056")
 	)
-	(symbol
-		(lib_id "C128_PD_PSU:+5V")
-		(at 256.54 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(uuid "a82dea4f-98ff-510a-ad41-90d0ada36120")
-		(property "Reference" "#PWR28"
-			(at 259.08 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+	(label "5V_BUCK"
+		(at 256.54 120.65 90)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "+5V"
-			(at 256.54 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 256.54 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 256.54 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 256.54 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ae3680a4-e594-55a4-95c8-571a988b2eb1")
-		)
-		(instances
-			(project "C128 USB-C PD Power Adapter"
-				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR28")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "5dfd2a7f-66ba-557f-b94a-bb3158e0b4d1")
 	)
 	(wire
 		(pts
@@ -8096,7 +8177,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e639c682-897a-523d-8203-ae10ef4b162f")
+		(uuid "9718a2bd-528a-5d18-aaa1-3d07396a9afe")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -8106,8 +8187,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "f2123800-889d-57e0-afbd-1eee3b39d381")
-		(property "Reference" "#PWR29"
+		(uuid "a82dea4f-98ff-510a-ad41-90d0ada36120")
+		(property "Reference" "#PWR26"
 			(at 259.08 128.27 0)
 			(effects
 				(font
@@ -8152,12 +8233,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "0dbb94c7-cf36-5f5f-a99d-7b733dfcef8a")
+			(uuid "ae3680a4-e594-55a4-95c8-571a988b2eb1")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
 				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR29")
+					(reference "#PWR26")
 					(unit 1)
 				)
 			)
@@ -8171,7 +8252,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "273192c6-c3e2-52bb-996f-df3df17fb9a5")
+		(uuid "e639c682-897a-523d-8203-ae10ef4b162f")
 		(property "Reference" "C18"
 			(at 269.24 125.73 0)
 			(effects
@@ -8227,10 +8308,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "adf4b74b-ece6-5e2d-9526-f85b5edcb077")
+			(uuid "f2123800-889d-57e0-afbd-1eee3b39d381")
 		)
 		(pin "2"
-			(uuid "b48998c9-dd2b-5ba8-8c00-e6f4ecc60f0a")
+			(uuid "0dbb94c7-cf36-5f5f-a99d-7b733dfcef8a")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8250,72 +8331,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b47cd956-19e0-5514-92ee-db4de076fae8")
+		(uuid "273192c6-c3e2-52bb-996f-df3df17fb9a5")
 	)
-	(symbol
-		(lib_id "C128_PD_PSU:+5V")
-		(at 266.7 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(uuid "ec5bd9f0-ae82-5607-9d5b-6e209d3cd4dc")
-		(property "Reference" "#PWR30"
-			(at 269.24 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+	(label "5V_BUCK"
+		(at 266.7 120.65 90)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "+5V"
-			(at 266.7 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 266.7 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 266.7 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 266.7 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "59bd8b6c-2545-58aa-a7f7-17587a71eb7e")
-		)
-		(instances
-			(project "C128 USB-C PD Power Adapter"
-				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR30")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "adf4b74b-ece6-5e2d-9526-f85b5edcb077")
 	)
 	(wire
 		(pts
@@ -8326,7 +8352,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "323965b3-4c60-50e5-9230-fb37801f15ff")
+		(uuid "b48998c9-dd2b-5ba8-8c00-e6f4ecc60f0a")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -8336,8 +8362,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "89c7347d-1a13-5b4b-824f-092c270f54d7")
-		(property "Reference" "#PWR31"
+		(uuid "b47cd956-19e0-5514-92ee-db4de076fae8")
+		(property "Reference" "#PWR27"
 			(at 269.24 128.27 0)
 			(effects
 				(font
@@ -8382,12 +8408,1129 @@
 			)
 		)
 		(pin "1"
+			(uuid "ec5bd9f0-ae82-5607-9d5b-6e209d3cd4dc")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "#PWR27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:TPS25947")
+		(at 299.72 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "59bd8b6c-2545-58aa-a7f7-17587a71eb7e")
+		(property "Reference" "U4"
+			(at 299.72 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TPS259470ARPWR"
+			(at 299.72 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "C128_PD_PSU:TI_RPW0010A_VQFN-10-HR_2x2mm"
+			(at 299.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 299.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TI TPS259470A eFuse (auto-retry): cuts the C128 +5 V off if the buck output exceeds ~5.64 V; 4.45 A current limit, reverse blocking"
+			(at 299.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3662799"
+			(at 299.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "323965b3-4c60-50e5-9230-fb37801f15ff")
+		)
+		(pin "1"
+			(uuid "89c7347d-1a13-5b4b-824f-092c270f54d7")
+		)
+		(pin "2"
 			(uuid "aac6112f-8dcb-537e-8ae1-66276b9cee78")
+		)
+		(pin "7"
+			(uuid "bf222886-c3df-56a8-893d-7905ccbc123b")
+		)
+		(pin "6"
+			(uuid "d53de09d-0542-539d-b68b-1ce562733c02")
+		)
+		(pin "3"
+			(uuid "34d74a9e-4eee-5e86-b8be-0677b9f037df")
+		)
+		(pin "4"
+			(uuid "f5fb57ac-e7a6-5fbc-9e2c-2309a078ff37")
+		)
+		(pin "9"
+			(uuid "d7440e8d-7065-50e4-9731-d92afdff4c5f")
+		)
+		(pin "10"
+			(uuid "3f939250-e5aa-5199-9581-3a92eed67e27")
+		)
+		(pin "8"
+			(uuid "3cae4ba5-bb7e-5090-bf59-4bddd5316962")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 289.56 106.68)
+			(xy 287.02 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfa90578-3c34-535a-a516-3e67da24a56f")
+	)
+	(label "5V_BUCK"
+		(at 287.02 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ff1b563f-455c-56a5-b7e6-a978a3c253e6")
+	)
+	(wire
+		(pts
+			(xy 289.56 111.76)
+			(xy 287.02 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dae491b1-5210-5c62-8f60-ef69592160ee")
+	)
+	(label "EF_EN"
+		(at 287.02 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bf189c51-8f1f-5598-84ac-8f708deaad26")
+	)
+	(wire
+		(pts
+			(xy 289.56 114.3)
+			(xy 287.02 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31d13f9b-3df6-521e-b8f6-cebb61e1b35d")
+	)
+	(label "EF_OVLO"
+		(at 287.02 114.3 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "abf3345f-47de-5e56-bdaa-d1278c5054fe")
+	)
+	(no_connect
+		(at 289.56 116.84)
+		(uuid "a305d1d6-95c3-50f4-a7b4-c36cd94a460d")
+	)
+	(wire
+		(pts
+			(xy 309.88 106.68)
+			(xy 317.5 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ff04e1c-f76a-5417-98f7-8048699b7c2b")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:+5V")
+		(at 317.5 106.68 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "d0a7657c-babf-5dde-8d4f-b122e3018a26")
+		(property "Reference" "#PWR28"
+			(at 320.04 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 322.58 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 317.5 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 317.5 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 317.5 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "039da23e-ff74-5f95-a21e-bddaec2283ce")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "#PWR28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(no_connect
+		(at 309.88 109.22)
+		(uuid "a098ae3e-5cec-5ece-915d-5c64e18b9a4b")
+	)
+	(no_connect
+		(at 309.88 111.76)
+		(uuid "c54aaed0-ac92-5cb3-ba82-b9e68743ce13")
+	)
+	(wire
+		(pts
+			(xy 309.88 114.3)
+			(xy 312.42 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78b107d2-f7ed-5ac1-907d-e825001d2166")
+	)
+	(label "EF_ILM"
+		(at 312.42 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b4307abe-af7f-5a16-9e13-c3ec9f525f5d")
+	)
+	(no_connect
+		(at 309.88 116.84)
+		(uuid "2daa235a-c3ca-555b-8d45-42a944ba2033")
+	)
+	(wire
+		(pts
+			(xy 299.72 121.92)
+			(xy 299.72 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa2e8080-9470-5da4-87f4-5cd26fd18b44")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:GND")
+		(at 299.72 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "354ee175-4c6a-5283-be75-cee09e774e20")
+		(property "Reference" "#PWR29"
+			(at 302.26 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 299.72 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 299.72 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 299.72 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 299.72 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ad7642a-eebe-586c-b8bc-76f93102c0b4")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "#PWR29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:R")
+		(at 276.86 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "725d1026-f358-598f-b741-7cf5f3c81f31")
+		(property "Reference" "R13"
+			(at 279.4 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 279.4 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "C128_PD_PSU:R_0603_1608Metric"
+			(at 276.86 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 276.86 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "eFuse EN/UVLO top: on above ~3.75 V"
+			(at 276.86 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 276.86 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ef68a05e-55e5-5135-85ad-76bbdcf122ad")
+		)
+		(pin "2"
+			(uuid "153044d4-1d17-5621-b1b6-660c54d7dc4a")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 276.86 128.27)
+			(xy 276.86 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e8d4318-4696-5e53-b7f8-85c1de5dc4a5")
+	)
+	(label "5V_BUCK"
+		(at 276.86 125.73 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a29cae80-2721-54ae-8d5e-15fc695d2484")
+	)
+	(wire
+		(pts
+			(xy 276.86 135.89)
+			(xy 276.86 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f01a0546-c92e-54b2-bb90-5e4c68a852ec")
+	)
+	(label "EF_EN"
+		(at 276.86 138.43 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "53b234ac-c7ca-518d-ae4e-ea3a23b4de1c")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:R")
+		(at 276.86 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "189a0f9e-fc0c-5680-bcd5-1a6bd66012e8")
+		(property "Reference" "R14"
+			(at 279.4 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47k"
+			(at 279.4 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "C128_PD_PSU:R_0603_1608Metric"
+			(at 276.86 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 276.86 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "eFuse EN/UVLO bottom (keeps EN < 5 V even with 15 V at IN)"
+			(at 276.86 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25819"
+			(at 276.86 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e639c146-d3a0-51de-b13c-c8611ac6f738")
+		)
+		(pin "2"
+			(uuid "33f4b24b-37d6-595a-bafc-9497bb4da0d4")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 276.86 148.59)
+			(xy 276.86 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5360f050-a515-5028-921b-4fcba7b814f6")
+	)
+	(label "EF_EN"
+		(at 276.86 146.05 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "53e14931-b201-5e91-9971-d4502e9858af")
+	)
+	(wire
+		(pts
+			(xy 276.86 156.21)
+			(xy 276.86 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07bcfa73-4cef-542d-9876-dae90af7c139")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:GND")
+		(at 276.86 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "fb477a83-d4af-58df-bd33-1408ad1667d6")
+		(property "Reference" "#PWR30"
+			(at 279.4 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 276.86 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 276.86 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 276.86 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 276.86 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "46e1dace-b614-528d-945b-8525a509a661")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "#PWR30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:R")
+		(at 287.02 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a2ddaa42-b4c6-5bbe-b58f-46043a2f48fd")
+		(property "Reference" "R15"
+			(at 289.56 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 289.56 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "C128_PD_PSU:R_0603_1608Metric"
+			(at 287.02 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 287.02 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "eFuse OVLO top: trips at 1.20 V x 127/27 = 5.64 V, releases at 5.13 V"
+			(at 287.02 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 287.02 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "27a504f7-cdfc-5c8d-8f2c-635f3551c603")
+		)
+		(pin "2"
+			(uuid "8c642705-07b4-5f57-ba7a-a39be4e6643d")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 287.02 128.27)
+			(xy 287.02 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51f85e4a-df87-560e-aca4-5308c25ad7f2")
+	)
+	(label "5V_BUCK"
+		(at 287.02 125.73 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cee6b5a9-2fce-5a75-88e7-676bc1904950")
+	)
+	(wire
+		(pts
+			(xy 287.02 135.89)
+			(xy 287.02 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f161374e-1152-5923-849b-61a81110fb76")
+	)
+	(label "EF_OVLO"
+		(at 287.02 138.43 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dcc27ae8-bc66-56fd-8a1a-9f6c29c957fb")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:R")
+		(at 287.02 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "602ecebf-7593-5128-92f5-8c735502eeef")
+		(property "Reference" "R16"
+			(at 289.56 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "27k"
+			(at 289.56 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "C128_PD_PSU:R_0603_1608Metric"
+			(at 287.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 287.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "eFuse OVLO bottom"
+			(at 287.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22967"
+			(at 287.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a25f41f-3e26-5382-b3fc-7ecb1270e7e6")
+		)
+		(pin "2"
+			(uuid "48fd83d4-9ff8-5cbe-816a-9b77c4cd3c25")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 287.02 148.59)
+			(xy 287.02 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b983826b-5b87-50b0-9d7f-203c8fe7d204")
+	)
+	(label "EF_OVLO"
+		(at 287.02 146.05 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "652bac16-3960-5b1a-ace1-8d7be65b6d62")
+	)
+	(wire
+		(pts
+			(xy 287.02 156.21)
+			(xy 287.02 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75a45fed-1623-5cba-83b5-4b652ddc08a2")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:GND")
+		(at 287.02 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "b180e0f0-ba76-5e01-8bb4-823c5ba542f7")
+		(property "Reference" "#PWR31"
+			(at 289.56 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 287.02 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 287.02 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 287.02 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 287.02 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d1a08059-7bcb-528b-b1a5-df281c16856b")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
 				(path "/85fcbd60-5828-59f8-b929-d66180677155"
 					(reference "#PWR31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:R")
+		(at 322.58 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "19baf268-f5d1-5fd1-aba0-999f2635dcf1")
+		(property "Reference" "R17"
+			(at 325.12 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "750R"
+			(at 325.12 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "C128_PD_PSU:R_0603_1608Metric"
+			(at 322.58 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "eFuse current limit: 750 R = 4.45 A (3.96 A min)"
+			(at 322.58 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23241"
+			(at 322.58 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4b320572-f88b-5142-ac26-74a82e0a4333")
+		)
+		(pin "2"
+			(uuid "4b80ffe2-a75f-5203-8a18-e4f4dab0e6c6")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 322.58 128.27)
+			(xy 322.58 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01284e86-ce80-5c53-8018-dab84986215d")
+	)
+	(label "EF_ILM"
+		(at 322.58 125.73 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "90fd038b-abe1-53ba-81c3-260559aa1e8b")
+	)
+	(wire
+		(pts
+			(xy 322.58 135.89)
+			(xy 322.58 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa9fe5fa-ee58-527e-a6b3-444cc0067631")
+	)
+	(symbol
+		(lib_id "C128_PD_PSU:GND")
+		(at 322.58 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "dc431b4e-94bb-5969-96d7-37185c8996d9")
+		(property "Reference" "#PWR32"
+			(at 325.12 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 322.58 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 322.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 322.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4ae6b1b0-0aff-5914-8099-208887fbe5ae")
+		)
+		(instances
+			(project "C128 USB-C PD Power Adapter"
+				(path "/85fcbd60-5828-59f8-b929-d66180677155"
+					(reference "#PWR32")
 					(unit 1)
 				)
 			)
@@ -8401,7 +9544,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bf222886-c3df-56a8-893d-7905ccbc123b")
+		(uuid "461b442b-22bf-5dc3-9233-8df82c5a2f14")
 		(property "Reference" "R6"
 			(at 228.6 135.89 0)
 			(effects
@@ -8457,10 +9600,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d53de09d-0542-539d-b68b-1ce562733c02")
+			(uuid "f4acd3d8-7ffe-5ef6-a288-fbd1c9c5894b")
 		)
 		(pin "2"
-			(uuid "34d74a9e-4eee-5e86-b8be-0677b9f037df")
+			(uuid "5f337304-2a87-58cf-b8f8-b52f94cb81a7")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8480,72 +9623,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f5fb57ac-e7a6-5fbc-9e2c-2309a078ff37")
+		(uuid "ca931c47-c413-54e4-b7b2-07575b7ddd7a")
 	)
-	(symbol
-		(lib_id "C128_PD_PSU:+5V")
-		(at 226.06 130.81 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(uuid "d7440e8d-7065-50e4-9731-d92afdff4c5f")
-		(property "Reference" "#PWR32"
-			(at 228.6 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+	(label "5V_BUCK"
+		(at 226.06 130.81 90)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "+5V"
-			(at 226.06 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 226.06 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 226.06 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3f939250-e5aa-5199-9581-3a92eed67e27")
-		)
-		(instances
-			(project "C128 USB-C PD Power Adapter"
-				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR32")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "bebd6f07-c627-5a7a-b047-12b06fa807d7")
 	)
 	(wire
 		(pts
@@ -8556,7 +9644,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3cae4ba5-bb7e-5090-bf59-4bddd5316962")
+		(uuid "790c1354-dc6f-54da-a24d-db463967b99f")
 	)
 	(label "FB"
 		(at 226.06 143.51 270)
@@ -8566,7 +9654,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "bfa90578-3c34-535a-a516-3e67da24a56f")
+		(uuid "6598c1f9-efcd-5c5c-9df9-488f6311293f")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:R")
@@ -8576,7 +9664,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ff1b563f-455c-56a5-b7e6-a978a3c253e6")
+		(uuid "d0ede606-5479-5153-8526-8c498789771d")
 		(property "Reference" "R7"
 			(at 228.6 156.21 0)
 			(effects
@@ -8632,10 +9720,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "dae491b1-5210-5c62-8f60-ef69592160ee")
+			(uuid "9efad0bb-feae-557c-9401-68ee5a4c9186")
 		)
 		(pin "2"
-			(uuid "bf189c51-8f1f-5598-84ac-8f708deaad26")
+			(uuid "22b0f511-1c0d-5883-bc42-727b863a6998")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8655,7 +9743,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "31d13f9b-3df6-521e-b8f6-cebb61e1b35d")
+		(uuid "86796fd3-3882-55ff-8627-4dec6132a097")
 	)
 	(label "FB"
 		(at 226.06 151.13 90)
@@ -8665,7 +9753,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "abf3345f-47de-5e56-bdaa-d1278c5054fe")
+		(uuid "48281c2a-863f-5fd8-acb9-2a0bab079e41")
 	)
 	(wire
 		(pts
@@ -8676,7 +9764,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a305d1d6-95c3-50f4-a7b4-c36cd94a460d")
+		(uuid "36ba0465-8ce2-56ca-9a17-156c210bbb8d")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -8686,7 +9774,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "8ff04e1c-f76a-5417-98f7-8048699b7c2b")
+		(uuid "1f002077-072e-5ffc-87b1-17ca40c14703")
 		(property "Reference" "#PWR33"
 			(at 228.6 158.75 0)
 			(effects
@@ -8732,7 +9820,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d0a7657c-babf-5dde-8d4f-b122e3018a26")
+			(uuid "93a926e8-8940-5d6b-ae93-e358e2dc1336")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8751,7 +9839,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "039da23e-ff74-5f95-a21e-bddaec2283ce")
+		(uuid "47d9c511-26b4-5b7b-83fb-d06946a0526c")
 		(property "Reference" "U3"
 			(at 198.12 232.41 0)
 			(effects
@@ -8805,22 +9893,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "a098ae3e-5cec-5ece-915d-5c64e18b9a4b")
+			(uuid "8829c807-6f25-58a0-baf7-ecf318185473")
 		)
 		(pin "2"
-			(uuid "c54aaed0-ac92-5cb3-ba82-b9e68743ce13")
+			(uuid "1c8e339d-0edf-5177-a144-e2463b7486ac")
 		)
 		(pin "3"
-			(uuid "78b107d2-f7ed-5ac1-907d-e825001d2166")
+			(uuid "59f251e8-40c5-5ff3-8afe-73a9664ba7be")
 		)
 		(pin "4"
-			(uuid "b4307abe-af7f-5a16-9e13-c3ec9f525f5d")
+			(uuid "397d52f6-2bdb-5c65-b3f6-1afd57208943")
 		)
 		(pin "5"
-			(uuid "2daa235a-c3ca-555b-8d45-42a944ba2033")
+			(uuid "a3d1800c-dfeb-5907-b0e4-7c29afdfc4d2")
 		)
 		(pin "6"
-			(uuid "fa2e8080-9470-5da4-87f4-5cd26fd18b44")
+			(uuid "d34ac7b8-9d09-5c6c-bf76-a76956201e13")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8840,7 +9928,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "354ee175-4c6a-5283-be75-cee09e774e20")
+		(uuid "eec6a203-3f1e-5420-a890-3361c5dc1ba4")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -8850,7 +9938,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "6ad7642a-eebe-586c-b8bc-76f93102c0b4")
+		(uuid "95ce23a9-d004-5749-8d34-c1319da64c04")
 		(property "Reference" "#PWR34"
 			(at 200.66 243.84 0)
 			(effects
@@ -8896,7 +9984,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "725d1026-f358-598f-b741-7cf5f3c81f31")
+			(uuid "26d8fccc-2ec6-5487-8b4c-e584a5b816a1")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -8916,7 +10004,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ef68a05e-55e5-5135-85ad-76bbdcf122ad")
+		(uuid "920e86cd-6fa1-5d82-8ea3-2e5a1caf1f38")
 	)
 	(label "SW2"
 		(at 210.82 238.76 0)
@@ -8926,7 +10014,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "153044d4-1d17-5621-b1b6-660c54d7dc4a")
+		(uuid "edbba996-e2c5-5e2d-8b1c-55bc4400aea1")
 	)
 	(wire
 		(pts
@@ -8937,7 +10025,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0e8d4318-4696-5e53-b7f8-85c1de5dc4a5")
+		(uuid "3812ab5e-217d-5dad-be32-0fa50509f2c0")
 	)
 	(label "VSW"
 		(at 185.42 236.22 180)
@@ -8947,7 +10035,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a29cae80-2721-54ae-8d5e-15fc695d2484")
+		(uuid "d037108e-3235-5030-be31-64961d6a19fe")
 	)
 	(wire
 		(pts
@@ -8958,7 +10046,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f01a0546-c92e-54b2-bb90-5e4c68a852ec")
+		(uuid "2b72289e-d459-5c1c-a229-15083d7c888f")
 	)
 	(label "FB2"
 		(at 210.82 241.3 0)
@@ -8968,7 +10056,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "53b234ac-c7ca-518d-ae4e-ea3a23b4de1c")
+		(uuid "d06627ec-befe-5359-a36b-c24d1843e57e")
 	)
 	(wire
 		(pts
@@ -8979,7 +10067,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "189a0f9e-fc0c-5680-bcd5-1a6bd66012e8")
+		(uuid "fcfa6278-404d-54ea-b1ac-bd580f9a7fdb")
 	)
 	(label "EN2"
 		(at 185.42 241.3 180)
@@ -8989,7 +10077,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e639c146-d3a0-51de-b13c-c8611ac6f738")
+		(uuid "ce1cc5c5-ac9d-508e-834b-a7362166671f")
 	)
 	(wire
 		(pts
@@ -9000,7 +10088,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "33f4b24b-37d6-595a-bafc-9497bb4da0d4")
+		(uuid "a129f9ec-6cdf-5806-a4a9-8fb8682ca951")
 	)
 	(label "BOOT2"
 		(at 210.82 236.22 0)
@@ -9010,7 +10098,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5360f050-a515-5028-921b-4fcba7b814f6")
+		(uuid "3f579dc7-5315-5e13-be02-04ba64999b5a")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:C")
@@ -9020,7 +10108,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "53e14931-b201-5e91-9971-d4502e9858af")
+		(uuid "c60818bd-de02-5e64-8275-de7f56e1b20b")
 		(property "Reference" "C9"
 			(at 160.02 227.33 0)
 			(effects
@@ -9076,10 +10164,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "07bcfa73-4cef-542d-9876-dae90af7c139")
+			(uuid "d79b50c3-be36-5121-a975-cddbf79b0215")
 		)
 		(pin "2"
-			(uuid "fb477a83-d4af-58df-bd33-1408ad1667d6")
+			(uuid "81abc99f-da40-585a-9fa5-1cfb0e5070b9")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9099,7 +10187,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "46e1dace-b614-528d-945b-8525a509a661")
+		(uuid "a55a416e-ae69-505d-a6ba-963b658ce0ef")
 	)
 	(label "VSW"
 		(at 157.48 222.25 90)
@@ -9109,7 +10197,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a2ddaa42-b4c6-5bbe-b58f-46043a2f48fd")
+		(uuid "7a076ffa-6703-5cb1-a9bb-2c85bd412b5d")
 	)
 	(wire
 		(pts
@@ -9120,7 +10208,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "27a504f7-cdfc-5c8d-8f2c-635f3551c603")
+		(uuid "fc51db3d-29a0-5114-84bf-901ef15861ce")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -9130,7 +10218,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "8c642705-07b4-5f57-ba7a-a39be4e6643d")
+		(uuid "d1a3eea0-78c6-573f-9b6e-0af420297583")
 		(property "Reference" "#PWR35"
 			(at 160.02 229.87 0)
 			(effects
@@ -9176,7 +10264,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "51f85e4a-df87-560e-aca4-5308c25ad7f2")
+			(uuid "d39b09c7-9ff2-5d5f-a23e-48044d49ad7a")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9195,7 +10283,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "cee6b5a9-2fce-5a75-88e7-676bc1904950")
+		(uuid "340d2231-ed5b-5ea9-9383-5bdb0cf408e5")
 		(property "Reference" "C10"
 			(at 170.18 227.33 0)
 			(effects
@@ -9251,10 +10339,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f161374e-1152-5923-849b-61a81110fb76")
+			(uuid "23601be0-c35a-55ed-bbb7-99bceee16364")
 		)
 		(pin "2"
-			(uuid "dcc27ae8-bc66-56fd-8a1a-9f6c29c957fb")
+			(uuid "a627e8fe-b5aa-53f7-925a-0f9f852ef20a")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9274,7 +10362,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "602ecebf-7593-5128-92f5-8c735502eeef")
+		(uuid "dc20e6df-afe0-5fcb-8e8a-7c4e49f5a6ae")
 	)
 	(label "VSW"
 		(at 167.64 222.25 90)
@@ -9284,7 +10372,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7a25f41f-3e26-5382-b3fc-7ecb1270e7e6")
+		(uuid "935f7539-546b-5432-8516-e6c430ccd925")
 	)
 	(wire
 		(pts
@@ -9295,7 +10383,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "48fd83d4-9ff8-5cbe-816a-9b77c4cd3c25")
+		(uuid "43772650-7361-501b-aaeb-6ac6bc81fa27")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -9305,7 +10393,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b983826b-5b87-50b0-9d7f-203c8fe7d204")
+		(uuid "1e11dda6-8ea2-51ce-8b2f-72d388cddf49")
 		(property "Reference" "#PWR36"
 			(at 170.18 229.87 0)
 			(effects
@@ -9351,7 +10439,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "652bac16-3960-5b1a-ace1-8d7be65b6d62")
+			(uuid "2bc01eb1-84af-5f3a-b7c8-82261dd6337e")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9370,7 +10458,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "75a45fed-1623-5cba-83b5-4b652ddc08a2")
+		(uuid "971af30c-6adf-5449-8125-63ff7a9d31a1")
 		(property "Reference" "R9"
 			(at 185.42 252.73 0)
 			(effects
@@ -9426,10 +10514,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b180e0f0-ba76-5e01-8bb4-823c5ba542f7")
+			(uuid "ab29f3c6-b124-59d5-b986-9987764cae95")
 		)
 		(pin "2"
-			(uuid "d1a08059-7bcb-528b-b1a5-df281c16856b")
+			(uuid "4fb41f00-d156-596a-869f-16d15927dcda")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9449,7 +10537,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "19baf268-f5d1-5fd1-aba0-999f2635dcf1")
+		(uuid "6355be95-402d-5e53-b420-192ecbf1862f")
 	)
 	(label "VSW"
 		(at 182.88 247.65 90)
@@ -9459,7 +10547,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4b320572-f88b-5142-ac26-74a82e0a4333")
+		(uuid "c5e79938-90f4-5071-aa62-ad95bfc560d0")
 	)
 	(wire
 		(pts
@@ -9470,7 +10558,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4b80ffe2-a75f-5203-8a18-e4f4dab0e6c6")
+		(uuid "bcb13239-e4c9-5630-a359-de49b85c58d1")
 	)
 	(label "EN2"
 		(at 182.88 260.35 270)
@@ -9480,7 +10568,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "01284e86-ce80-5c53-8018-dab84986215d")
+		(uuid "a824d428-4d16-54c0-9b30-5ec7491dbab4")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:R")
@@ -9490,7 +10578,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "90fd038b-abe1-53ba-81c3-260559aa1e8b")
+		(uuid "f2c68b4a-388a-54fb-9906-aae559820b39")
 		(property "Reference" "R10"
 			(at 185.42 267.97 0)
 			(effects
@@ -9546,10 +10634,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "aa9fe5fa-ee58-527e-a6b3-444cc0067631")
+			(uuid "e071d2d8-bc5d-5a3b-9ca0-f4b67b10d62f")
 		)
 		(pin "2"
-			(uuid "dc431b4e-94bb-5969-96d7-37185c8996d9")
+			(uuid "9aa071e0-e31d-52a2-9c6a-5f6a9bf64aec")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9569,7 +10657,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4ae6b1b0-0aff-5914-8099-208887fbe5ae")
+		(uuid "53efd161-38f7-526f-a519-3e394d84153c")
 	)
 	(label "EN2"
 		(at 182.88 262.89 90)
@@ -9579,7 +10667,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "461b442b-22bf-5dc3-9233-8df82c5a2f14")
+		(uuid "58880509-aaa8-529b-8b79-4018dd966f2e")
 	)
 	(wire
 		(pts
@@ -9590,7 +10678,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f4acd3d8-7ffe-5ef6-a288-fbd1c9c5894b")
+		(uuid "062a418e-ff21-502b-ad5e-005b88926432")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -9600,7 +10688,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "5f337304-2a87-58cf-b8f8-b52f94cb81a7")
+		(uuid "9a79b5c8-362a-5257-be41-8e60388066b9")
 		(property "Reference" "#PWR37"
 			(at 185.42 270.51 0)
 			(effects
@@ -9646,7 +10734,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ca931c47-c413-54e4-b7b2-07575b7ddd7a")
+			(uuid "11400b70-b0a5-580f-8628-5a2f8b5f8c4c")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9665,7 +10753,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bebd6f07-c627-5a7a-b047-12b06fa807d7")
+		(uuid "e398d470-139b-5e9c-98e5-15fd1bbcaad9")
 		(property "Reference" "C11"
 			(at 228.6 224.79 0)
 			(effects
@@ -9721,10 +10809,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "790c1354-dc6f-54da-a24d-db463967b99f")
+			(uuid "55e5c052-98e2-5a49-a5d1-2dd6ee65db4a")
 		)
 		(pin "2"
-			(uuid "6598c1f9-efcd-5c5c-9df9-488f6311293f")
+			(uuid "14884fb7-148c-569d-8012-5aafa32c03b0")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9744,7 +10832,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d0ede606-5479-5153-8526-8c498789771d")
+		(uuid "b65603b5-223d-5443-a497-e1edb5d24174")
 	)
 	(label "BOOT2"
 		(at 226.06 219.71 90)
@@ -9754,7 +10842,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9efad0bb-feae-557c-9401-68ee5a4c9186")
+		(uuid "7d80ca5d-32e6-5d29-9b19-478e4dded00b")
 	)
 	(wire
 		(pts
@@ -9765,7 +10853,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "22b0f511-1c0d-5883-bc42-727b863a6998")
+		(uuid "ad31fe26-0cc8-51bc-adbf-e38c016149f7")
 	)
 	(label "SW2"
 		(at 226.06 232.41 270)
@@ -9775,7 +10863,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "86796fd3-3882-55ff-8627-4dec6132a097")
+		(uuid "89a7d837-a423-5d10-9d15-b88e3f56918e")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:L")
@@ -9785,7 +10873,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "48281c2a-863f-5fd8-acb9-2a0bab079e41")
+		(uuid "7ddf4a5b-0f2a-585f-b506-15a20a34aa21")
 		(property "Reference" "L2"
 			(at 228.6 237.49 0)
 			(effects
@@ -9841,10 +10929,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "36ba0465-8ce2-56ca-9a17-156c210bbb8d")
+			(uuid "1f8bb12b-c5e9-5efc-801f-c713e269dccc")
 		)
 		(pin "2"
-			(uuid "1f002077-072e-5ffc-87b1-17ca40c14703")
+			(uuid "cd29ecaf-239e-5216-a8e7-d447d7f603d0")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9864,7 +10952,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "93a926e8-8940-5d6b-ae93-e358e2dc1336")
+		(uuid "20b27c47-c863-58c1-a3fb-6a82945b697d")
 	)
 	(label "SW2"
 		(at 226.06 232.41 90)
@@ -9874,7 +10962,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "47d9c511-26b4-5b7b-83fb-d06946a0526c")
+		(uuid "af982418-f4bc-581c-b202-7b285a09ee83")
 	)
 	(wire
 		(pts
@@ -9885,7 +10973,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8829c807-6f25-58a0-baf7-ecf318185473")
+		(uuid "770a1f71-0b2c-5ea3-ad92-fbdec3c65daa")
 	)
 	(label "12V_BUCK"
 		(at 226.06 245.11 270)
@@ -9895,7 +10983,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1c8e339d-0edf-5177-a144-e2463b7486ac")
+		(uuid "95edf40a-6d27-5f83-8ec1-7dfb69e0bea8")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:C")
@@ -9905,7 +10993,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "59f251e8-40c5-5ff3-8afe-73a9664ba7be")
+		(uuid "ac04ffe4-7ed5-5712-917b-7b360e40ce47")
 		(property "Reference" "C12"
 			(at 248.92 250.19 0)
 			(effects
@@ -9961,10 +11049,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "397d52f6-2bdb-5c65-b3f6-1afd57208943")
+			(uuid "507323d5-b29f-55af-adda-99acd5664517")
 		)
 		(pin "2"
-			(uuid "a3d1800c-dfeb-5907-b0e4-7c29afdfc4d2")
+			(uuid "d67c42a8-b4c4-5492-975d-f67cd1218fab")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -9984,7 +11072,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d34ac7b8-9d09-5c6c-bf76-a76956201e13")
+		(uuid "cc7cd656-e3b3-5839-a9cb-1905925a65dc")
 	)
 	(label "12V_BUCK"
 		(at 246.38 245.11 90)
@@ -9994,7 +11082,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eec6a203-3f1e-5420-a890-3361c5dc1ba4")
+		(uuid "4af27f4e-1750-5b44-934d-7de5a43be8ca")
 	)
 	(wire
 		(pts
@@ -10005,7 +11093,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "95ce23a9-d004-5749-8d34-c1319da64c04")
+		(uuid "fc9fbf28-7e2a-5448-b40d-4cfe42f99339")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -10015,7 +11103,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "26d8fccc-2ec6-5487-8b4c-e584a5b816a1")
+		(uuid "4d116c55-50f4-5b60-bd0a-002c120746c9")
 		(property "Reference" "#PWR38"
 			(at 248.92 252.73 0)
 			(effects
@@ -10061,7 +11149,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "920e86cd-6fa1-5d82-8ea3-2e5a1caf1f38")
+			(uuid "652de212-d011-5ce3-9f8a-516db396d6b8")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10080,7 +11168,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "edbba996-e2c5-5e2d-8b1c-55bc4400aea1")
+		(uuid "90c8b2c1-78b2-5c93-a6b8-a61e9e0ce9c7")
 		(property "Reference" "C13"
 			(at 259.08 250.19 0)
 			(effects
@@ -10136,10 +11224,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "3812ab5e-217d-5dad-be32-0fa50509f2c0")
+			(uuid "3d39d80c-4b5f-5c22-a90b-4cb43f33fb20")
 		)
 		(pin "2"
-			(uuid "d037108e-3235-5030-be31-64961d6a19fe")
+			(uuid "6ae10ad1-0e32-5814-b9ba-2a418d3d2947")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10159,7 +11247,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2b72289e-d459-5c1c-a229-15083d7c888f")
+		(uuid "52c7bf97-095c-540c-9278-569a967abde7")
 	)
 	(label "12V_BUCK"
 		(at 256.54 245.11 90)
@@ -10169,7 +11257,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d06627ec-befe-5359-a36b-c24d1843e57e")
+		(uuid "73bbabc1-6b6e-5738-952b-89c5c4094178")
 	)
 	(wire
 		(pts
@@ -10180,7 +11268,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fcfa6278-404d-54ea-b1ac-bd580f9a7fdb")
+		(uuid "0442954f-d296-5174-a428-e646c937a1c5")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -10190,7 +11278,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ce1cc5c5-ac9d-508e-834b-a7362166671f")
+		(uuid "3153b4ad-1603-5a51-aedc-0e03b63aa896")
 		(property "Reference" "#PWR39"
 			(at 259.08 252.73 0)
 			(effects
@@ -10236,7 +11324,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a129f9ec-6cdf-5806-a4a9-8fb8682ca951")
+			(uuid "79bd4f6c-5315-5634-a134-a7e51331859d")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10255,7 +11343,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3f579dc7-5315-5e13-be02-04ba64999b5a")
+		(uuid "3acabb63-b3a1-5f99-9949-f81964b8707f")
 		(property "Reference" "R11"
 			(at 228.6 255.27 0)
 			(effects
@@ -10311,10 +11399,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c60818bd-de02-5e64-8275-de7f56e1b20b")
+			(uuid "7bbb9f02-3117-57fc-bff8-82c588484255")
 		)
 		(pin "2"
-			(uuid "d79b50c3-be36-5121-a975-cddbf79b0215")
+			(uuid "2116e2b8-fbeb-5f24-b929-75bba6186a04")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10334,7 +11422,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "81abc99f-da40-585a-9fa5-1cfb0e5070b9")
+		(uuid "a718c968-466f-51d8-a09a-f5743566104b")
 	)
 	(label "12V_BUCK"
 		(at 226.06 250.19 90)
@@ -10344,7 +11432,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a55a416e-ae69-505d-a6ba-963b658ce0ef")
+		(uuid "922d8ba2-7d16-52d9-b7f6-d944cd46c19e")
 	)
 	(wire
 		(pts
@@ -10355,7 +11443,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7a076ffa-6703-5cb1-a9bb-2c85bd412b5d")
+		(uuid "68173259-6581-5998-a0a6-223820f8427e")
 	)
 	(label "FB2"
 		(at 226.06 262.89 270)
@@ -10365,7 +11453,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "fc51db3d-29a0-5114-84bf-901ef15861ce")
+		(uuid "830d6c15-8688-5912-a438-cd0e1b4fe607")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:R")
@@ -10375,7 +11463,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d1a3eea0-78c6-573f-9b6e-0af420297583")
+		(uuid "761998b3-a7e4-56c1-9d7a-c0fb46fc13c6")
 		(property "Reference" "R12"
 			(at 228.6 270.51 0)
 			(effects
@@ -10431,10 +11519,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d39b09c7-9ff2-5d5f-a23e-48044d49ad7a")
+			(uuid "4b80057d-a260-5c50-a77c-919a91464528")
 		)
 		(pin "2"
-			(uuid "340d2231-ed5b-5ea9-9383-5bdb0cf408e5")
+			(uuid "6bed1f0e-d5cf-5bce-b2d1-feadbcf1e4b9")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10454,7 +11542,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "23601be0-c35a-55ed-bbb7-99bceee16364")
+		(uuid "4e663b9b-489c-5512-9fa5-a0f1f35cd506")
 	)
 	(label "FB2"
 		(at 226.06 265.43 90)
@@ -10464,7 +11552,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a627e8fe-b5aa-53f7-925a-0f9f852ef20a")
+		(uuid "cb549bab-7cec-5c56-a726-1b826fc20e26")
 	)
 	(wire
 		(pts
@@ -10475,7 +11563,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dc20e6df-afe0-5fcb-8e8a-7c4e49f5a6ae")
+		(uuid "d06ef5a2-72fc-5a8d-883b-61b5b88ca93b")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -10485,7 +11573,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "935f7539-546b-5432-8516-e6c430ccd925")
+		(uuid "40ade626-3761-5bde-931b-913b61d32bcf")
 		(property "Reference" "#PWR40"
 			(at 228.6 273.05 0)
 			(effects
@@ -10531,7 +11619,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "43772650-7361-501b-aaeb-6ac6bc81fa27")
+			(uuid "ace50f9e-01e0-5768-b65e-da1927c2ffe4")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10550,7 +11638,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1e11dda6-8ea2-51ce-8b2f-72d388cddf49")
+		(uuid "f560c229-7b8c-5b45-8072-ad46c63fb4fa")
 		(property "Reference" "C14"
 			(at 213.36 255.27 0)
 			(effects
@@ -10606,10 +11694,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2bc01eb1-84af-5f3a-b7c8-82261dd6337e")
+			(uuid "1641e468-e1d6-5053-a794-e1ebab51f02a")
 		)
 		(pin "2"
-			(uuid "971af30c-6adf-5449-8125-63ff7a9d31a1")
+			(uuid "67358915-9060-5e9f-9fac-fdf812578d63")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10629,7 +11717,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ab29f3c6-b124-59d5-b986-9987764cae95")
+		(uuid "196c2040-3302-5112-a86b-646199652e92")
 	)
 	(label "12V_BUCK"
 		(at 210.82 250.19 90)
@@ -10639,7 +11727,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4fb41f00-d156-596a-869f-16d15927dcda")
+		(uuid "34be4ae5-b4c1-5179-a350-5e13b4ce0fd0")
 	)
 	(wire
 		(pts
@@ -10650,7 +11738,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6355be95-402d-5e53-b420-192ecbf1862f")
+		(uuid "593119ea-e78a-5313-ab74-864f71904f21")
 	)
 	(label "FB2"
 		(at 210.82 262.89 270)
@@ -10660,7 +11748,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c5e79938-90f4-5071-aa62-ad95bfc560d0")
+		(uuid "0e006fd4-9633-59ff-a57e-925aab4068e6")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:D_Zener")
@@ -10670,7 +11758,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bcb13239-e4c9-5630-a359-de49b85c58d1")
+		(uuid "1532a872-ec97-57b8-9b09-5d0f8ace8be7")
 		(property "Reference" "D1"
 			(at 81.28 171.45 0)
 			(effects
@@ -10724,10 +11812,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a824d428-4d16-54c0-9b30-5ec7491dbab4")
+			(uuid "f1bf70d0-d889-559c-9455-7765f6c45c8e")
 		)
 		(pin "2"
-			(uuid "f2c68b4a-388a-54fb-9906-aae559820b39")
+			(uuid "19ff6d38-12a5-5bf9-9335-7b4a0876ce20")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10747,7 +11835,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e071d2d8-bc5d-5a3b-9ca0-f4b67b10d62f")
+		(uuid "af8ddc91-cae1-57ab-8a83-d12eebf23a0c")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:+5V")
@@ -10757,7 +11845,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "9aa071e0-e31d-52a2-9c6a-5f6a9bf64aec")
+		(uuid "82bc1751-6019-5cb3-9b82-88b7f938596b")
 		(property "Reference" "#PWR41"
 			(at 72.39 170.18 0)
 			(effects
@@ -10803,7 +11891,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "53efd161-38f7-526f-a519-3e394d84153c")
+			(uuid "970cd95a-ebf5-501b-b582-4d9acf93c7ff")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10823,7 +11911,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "58880509-aaa8-529b-8b79-4018dd966f2e")
+		(uuid "1954e566-fcda-54cc-91ff-1a6aba967135")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -10833,7 +11921,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "062a418e-ff21-502b-ad5e-005b88926432")
+		(uuid "4cb842d1-ce3c-52ab-a137-449098da7ec8")
 		(property "Reference" "#PWR42"
 			(at 95.25 170.18 0)
 			(effects
@@ -10879,7 +11967,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "9a79b5c8-362a-5257-be41-8e60388066b9")
+			(uuid "14d06230-4f6a-5482-91be-b776553fbb0b")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10898,7 +11986,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "11400b70-b0a5-580f-8628-5a2f8b5f8c4c")
+		(uuid "b0419cdd-d95a-5a1d-a104-63a01ea0aa90")
 		(property "Reference" "F2"
 			(at 114.3 161.29 0)
 			(effects
@@ -10954,10 +12042,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "e398d470-139b-5e9c-98e5-15fd1bbcaad9")
+			(uuid "8b9725b9-5310-5c07-9359-816be0fe41f7")
 		)
 		(pin "2"
-			(uuid "55e5c052-98e2-5a49-a5d1-2dd6ee65db4a")
+			(uuid "52d5a45e-3812-5379-b1f4-d13713839b54")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -10977,7 +12065,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "14884fb7-148c-569d-8012-5aafa32c03b0")
+		(uuid "6e9780a3-58d4-5102-948f-1e18fcbd26c7")
 	)
 	(label "12V_BUCK"
 		(at 111.76 156.21 90)
@@ -10987,7 +12075,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b65603b5-223d-5443-a497-e1edb5d24174")
+		(uuid "2cfce1b9-9dda-54f4-a1a5-b0157c82f3b2")
 	)
 	(wire
 		(pts
@@ -10998,7 +12086,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7d80ca5d-32e6-5d29-9b19-478e4dded00b")
+		(uuid "baf031bc-e3ef-5d7a-bb0c-61111bba94be")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:+12V")
@@ -11008,7 +12096,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ad31fe26-0cc8-51bc-adbf-e38c016149f7")
+		(uuid "1b3b4b2d-3b9b-5942-aeeb-2017abecedc0")
 		(property "Reference" "#PWR43"
 			(at 114.3 163.83 0)
 			(effects
@@ -11054,7 +12142,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "89a7d837-a423-5d10-9d15-b88e3f56918e")
+			(uuid "36652faa-887a-5f3e-bf10-48b7d65271b1")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11073,7 +12161,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7ddf4a5b-0f2a-585f-b506-15a20a34aa21")
+		(uuid "8c6ff047-fc81-5bda-a59a-1f29a2d8a9df")
 		(property "Reference" "D2"
 			(at 132.08 171.45 0)
 			(effects
@@ -11127,10 +12215,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "1f8bb12b-c5e9-5efc-801f-c713e269dccc")
+			(uuid "faafc720-164a-50ce-ae46-b482a548fba5")
 		)
 		(pin "2"
-			(uuid "cd29ecaf-239e-5216-a8e7-d447d7f603d0")
+			(uuid "ddc62d87-e316-5f5b-afc5-5cd06cf0a666")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11150,7 +12238,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "20b27c47-c863-58c1-a3fb-6a82945b697d")
+		(uuid "506e6a42-daf5-587d-9194-e66206cea59d")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:+12V")
@@ -11160,7 +12248,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "af982418-f4bc-581c-b202-7b285a09ee83")
+		(uuid "445fa5dd-f55e-5df0-b5fb-046e4e9f3341")
 		(property "Reference" "#PWR44"
 			(at 123.19 170.18 0)
 			(effects
@@ -11206,7 +12294,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "770a1f71-0b2c-5ea3-ad92-fbdec3c65daa")
+			(uuid "15b39412-1c6b-5aac-b78f-0aeb3be0c8a4")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11226,7 +12314,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "95edf40a-6d27-5f83-8ec1-7dfb69e0bea8")
+		(uuid "fddc385d-e3c2-5fd2-b7a2-9d4e98491d01")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -11236,7 +12324,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ac04ffe4-7ed5-5712-917b-7b360e40ce47")
+		(uuid "4ecff365-9816-50bd-bdc9-348dee0ab3ba")
 		(property "Reference" "#PWR45"
 			(at 146.05 170.18 0)
 			(effects
@@ -11282,7 +12370,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "507323d5-b29f-55af-adda-99acd5664517")
+			(uuid "d19ba38f-6be9-5b72-93f1-2f12c0dc40e6")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11301,7 +12389,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d67c42a8-b4c4-5492-975d-f67cd1218fab")
+		(uuid "cb46bab6-5d2f-5501-8f4b-59b13624468c")
 		(property "Reference" "R8"
 			(at 104.14 186.69 0)
 			(effects
@@ -11357,10 +12445,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "cc7cd656-e3b3-5839-a9cb-1905925a65dc")
+			(uuid "7f6b4899-95dc-5054-9de9-45c82033dadf")
 		)
 		(pin "2"
-			(uuid "4af27f4e-1750-5b44-934d-7de5a43be8ca")
+			(uuid "a24e6daf-4f9b-5ebd-ac28-424d8deeea8f")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11380,7 +12468,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fc9fbf28-7e2a-5448-b40d-4cfe42f99339")
+		(uuid "4fdde39b-1754-5077-8b82-a1c158c190b5")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:+5V")
@@ -11390,7 +12478,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4d116c55-50f4-5b60-bd0a-002c120746c9")
+		(uuid "9fd29678-2b87-5fdf-a3c1-765fcf94b426")
 		(property "Reference" "#PWR46"
 			(at 104.14 176.53 0)
 			(effects
@@ -11436,7 +12524,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "652de212-d011-5ce3-9f8a-516db396d6b8")
+			(uuid "abef926b-e9b8-588f-9966-875e6458b4af")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11456,7 +12544,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "90c8b2c1-78b2-5c93-a6b8-a61e9e0ce9c7")
+		(uuid "909002b2-109c-5309-a037-0a018a939666")
 	)
 	(label "LED_A"
 		(at 101.6 194.31 270)
@@ -11466,7 +12554,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3d39d80c-4b5f-5c22-a90b-4cb43f33fb20")
+		(uuid "5dc43463-8d06-59ea-9756-acc30fcc8073")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:LED")
@@ -11476,7 +12564,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ae10ad1-0e32-5814-b9ba-2a418d3d2947")
+		(uuid "1bd37156-dcca-52b7-80a5-8fa52791ab96")
 		(property "Reference" "D3"
 			(at 114.3 184.15 0)
 			(effects
@@ -11530,10 +12618,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "52c7bf97-095c-540c-9278-569a967abde7")
+			(uuid "a176def3-27a9-52c0-93db-6650e18f33af")
 		)
 		(pin "2"
-			(uuid "73bbabc1-6b6e-5738-952b-89c5c4094178")
+			(uuid "e1f08564-cd3f-59b2-96e7-4e88a0a3022f")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11553,7 +12641,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0442954f-d296-5174-a428-e646c937a1c5")
+		(uuid "5fb0148e-a485-5ec7-a209-a902d7449672")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -11563,7 +12651,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "3153b4ad-1603-5a51-aedc-0e03b63aa896")
+		(uuid "5244360e-123e-59ff-bd3b-bb7f22c0fae3")
 		(property "Reference" "#PWR47"
 			(at 105.41 182.88 0)
 			(effects
@@ -11609,7 +12697,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "79bd4f6c-5315-5634-a134-a7e51331859d")
+			(uuid "17dc8135-a217-5929-8598-46c0041e9e1a")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11629,7 +12717,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3acabb63-b3a1-5f99-9949-f81964b8707f")
+		(uuid "8eb15efc-fd43-55cf-8dfc-157c198fd333")
 	)
 	(label "LED_A"
 		(at 120.65 187.96 0)
@@ -11639,7 +12727,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7bbb9f02-3117-57fc-bff8-82c588484255")
+		(uuid "2220ce0d-728f-556d-94cd-b03148b1bb29")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:Conn_01x05")
@@ -11649,7 +12737,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2116e2b8-fbeb-5f24-b929-75bba6186a04")
+		(uuid "8175938a-f35e-5146-b975-f2ac87af0f61")
 		(property "Reference" "J2"
 			(at 66.04 191.77 0)
 			(effects
@@ -11694,19 +12782,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "a718c968-466f-51d8-a09a-f5743566104b")
+			(uuid "8399f8d8-6c8e-564d-a228-f50a860e3251")
 		)
 		(pin "2"
-			(uuid "922d8ba2-7d16-52d9-b7f6-d944cd46c19e")
+			(uuid "f6ca82ab-b1df-5b15-961d-7433640b860d")
 		)
 		(pin "3"
-			(uuid "68173259-6581-5998-a0a6-223820f8427e")
+			(uuid "62e6c0f2-f21c-5817-8956-053fbe7b6ea6")
 		)
 		(pin "4"
-			(uuid "830d6c15-8688-5912-a438-cd0e1b4fe607")
+			(uuid "e43512aa-4348-5e8e-b893-97d2b8d054ec")
 		)
 		(pin "5"
-			(uuid "761998b3-a7e4-56c1-9d7a-c0fb46fc13c6")
+			(uuid "2eebd494-2ac0-53f0-9f6e-42be9308306f")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11726,7 +12814,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4b80057d-a260-5c50-a77c-919a91464528")
+		(uuid "ab3ad4d7-1961-5ca8-957b-8ab767a7cb3a")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:+5V")
@@ -11736,7 +12824,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "6bed1f0e-d5cf-5bce-b2d1-feadbcf1e4b9")
+		(uuid "21171ba8-8b29-54f8-8ffd-54ff7405d689")
 		(property "Reference" "#PWR48"
 			(at 55.88 190.5 0)
 			(effects
@@ -11782,7 +12870,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "4e663b9b-489c-5512-9fa5-a0f1f35cd506")
+			(uuid "65617702-8683-5515-8718-5817e8011036")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11802,7 +12890,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cb549bab-7cec-5c56-a726-1b826fc20e26")
+		(uuid "408cf98d-2950-5cee-a728-9739d894ec90")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -11812,7 +12900,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "d06ef5a2-72fc-5a8d-883b-61b5b88ca93b")
+		(uuid "ab486af2-1ffb-50f4-bd3a-c125f735d5d5")
 		(property "Reference" "#PWR49"
 			(at 50.8 193.04 0)
 			(effects
@@ -11858,7 +12946,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "40ade626-3761-5bde-931b-913b61d32bcf")
+			(uuid "7f0c5792-8b6b-5ebf-9f99-dd50f68abfc6")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11878,7 +12966,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ace50f9e-01e0-5768-b65e-da1927c2ffe4")
+		(uuid "ebec838a-6ec7-530a-ae7a-5c117e244d98")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:+12V")
@@ -11888,7 +12976,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "f560c229-7b8c-5b45-8072-ad46c63fb4fa")
+		(uuid "eb20668d-6961-5096-aa71-8ec70975fbe3")
 		(property "Reference" "#PWR50"
 			(at 55.88 195.58 0)
 			(effects
@@ -11934,7 +13022,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "1641e468-e1d6-5053-a794-e1ebab51f02a")
+			(uuid "9669edd7-b11f-58ca-b3d3-8639dd984f4a")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -11954,7 +13042,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "67358915-9060-5e9f-9fac-fdf812578d63")
+		(uuid "fdae5689-03a4-554d-950b-2cd67b331b5d")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -11964,7 +13052,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "196c2040-3302-5112-a86b-646199652e92")
+		(uuid "f3a0b949-fc92-54b7-a996-825a62b12e6e")
 		(property "Reference" "#PWR51"
 			(at 50.8 198.12 0)
 			(effects
@@ -12010,7 +13098,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "34be4ae5-b4c1-5179-a350-5e13b4ce0fd0")
+			(uuid "5f8efe56-2600-55a5-996e-15c73ba2b7d0")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12030,7 +13118,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "593119ea-e78a-5313-ab74-864f71904f21")
+		(uuid "0e8b6b29-ea22-57ce-889f-1a06081a76c1")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:GND")
@@ -12040,7 +13128,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "0e006fd4-9633-59ff-a57e-925aab4068e6")
+		(uuid "577dcb0c-7f80-5aed-bb53-e81a4e1c0e3d")
 		(property "Reference" "#PWR52"
 			(at 55.88 200.66 0)
 			(effects
@@ -12086,7 +13174,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "1532a872-ec97-57b8-9b09-5d0f8ace8be7")
+			(uuid "da7dedc0-f219-5460-82b7-4b819e571c16")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12105,7 +13193,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "f1bf70d0-d889-559c-9455-7765f6c45c8e")
+		(uuid "99df2830-1863-58c0-9236-3e7d19c5f8e7")
 		(property "Reference" "#FLG01"
 			(at 238.76 17.78 0)
 			(effects
@@ -12151,7 +13239,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "19ff6d38-12a5-5bf9-9335-7b4a0876ce20")
+			(uuid "84b37f03-da9f-5ccf-908d-2e3161074203")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12170,7 +13258,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "af8ddc91-cae1-57ab-8a83-d12eebf23a0c")
+		(uuid "f35d2cd2-a878-56f5-b2b3-3ba5f9dde468")
 		(property "Reference" "#PWR53"
 			(at 238.76 17.78 0)
 			(effects
@@ -12216,7 +13304,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "82bc1751-6019-5cb3-9b82-88b7f938596b")
+			(uuid "ee746cf1-8093-5823-b286-0fc624a666c4")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12235,7 +13323,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "970cd95a-ebf5-501b-b582-4d9acf93c7ff")
+		(uuid "6ac5e0fe-179b-57c9-8ee9-d665bce70bbf")
 		(property "Reference" "#FLG02"
 			(at 248.92 17.78 0)
 			(effects
@@ -12281,7 +13369,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "1954e566-fcda-54cc-91ff-1a6aba967135")
+			(uuid "377b9be5-2920-509c-8d05-ff5ff876dffe")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12300,7 +13388,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4cb842d1-ce3c-52ab-a137-449098da7ec8")
+		(uuid "194205aa-fd77-5461-9267-1139fa1abd2a")
 		(property "Reference" "#PWR54"
 			(at 248.92 17.78 0)
 			(effects
@@ -12346,7 +13434,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "14d06230-4f6a-5482-91be-b776553fbb0b")
+			(uuid "16e31abc-0e3e-5772-aa87-1b079958718b")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12365,7 +13453,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b0419cdd-d95a-5a1d-a104-63a01ea0aa90")
+		(uuid "9fc778a9-bd6c-5c54-8e24-606dab92f6ac")
 		(property "Reference" "#FLG03"
 			(at 259.08 17.78 0)
 			(effects
@@ -12411,7 +13499,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8b9725b9-5310-5c07-9359-816be0fe41f7")
+			(uuid "80322ed7-d79e-5615-98fb-63041b3e9840")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12431,7 +13519,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "52d5a45e-3812-5379-b1f4-d13713839b54")
+		(uuid "f4e09529-32e7-5b54-a6ac-9cd8ba2a5bb5")
 	)
 	(label "VSW"
 		(at 256.54 25.4 270)
@@ -12441,7 +13529,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6e9780a3-58d4-5102-948f-1e18fcbd26c7")
+		(uuid "3c8e0ada-f4da-56d2-ab33-1cbc54e66ae0")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:PWR_FLAG")
@@ -12451,7 +13539,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "2cfce1b9-9dda-54f4-a1a5-b0157c82f3b2")
+		(uuid "d6c99ef9-59a2-5876-ab28-72a1ff89bd79")
 		(property "Reference" "#FLG04"
 			(at 269.24 17.78 0)
 			(effects
@@ -12497,7 +13585,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "baf031bc-e3ef-5d7a-bb0c-61111bba94be")
+			(uuid "a45e3a13-57f3-5118-bdb9-9ab9229869b5")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12508,70 +13596,26 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "C128_PD_PSU:+5V")
-		(at 266.7 22.86 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(uuid "1b3b4b2d-3b9b-5942-aeeb-2017abecedc0")
-		(property "Reference" "#PWR55"
-			(at 269.24 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+	(wire
+		(pts
+			(xy 266.7 22.86)
+			(xy 266.7 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9a9093b-d07b-5ee7-9625-759a0f53af42")
+	)
+	(label "5V_BUCK"
+		(at 266.7 25.4 270)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right bottom)
 		)
-		(property "Value" "+5V"
-			(at 266.7 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 266.7 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 266.7 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 266.7 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "36652faa-887a-5f3e-bf10-48b7d65271b1")
-		)
-		(instances
-			(project "C128 USB-C PD Power Adapter"
-				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR55")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "dbe1c35a-4ffd-5fe8-a497-2e96ba06de88")
 	)
 	(symbol
 		(lib_id "C128_PD_PSU:PWR_FLAG")
@@ -12581,7 +13625,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "8c6ff047-fc81-5bda-a59a-1f29a2d8a9df")
+		(uuid "6c07aa79-d3a4-5758-9ad9-4ebed5e2e452")
 		(property "Reference" "#FLG05"
 			(at 279.4 17.78 0)
 			(effects
@@ -12627,7 +13671,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "faafc720-164a-50ce-ae46-b482a548fba5")
+			(uuid "2a4bc53e-4ecb-53ab-a45d-61e8dd5cef99")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
@@ -12646,8 +13690,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ddc62d87-e316-5f5b-afc5-5cd06cf0a666")
-		(property "Reference" "#PWR56"
+		(uuid "f9b7e691-81f1-53bb-9e76-14d73157ea88")
+		(property "Reference" "#PWR55"
 			(at 279.4 17.78 0)
 			(effects
 				(font
@@ -12692,18 +13736,18 @@
 			)
 		)
 		(pin "1"
-			(uuid "506e6a42-daf5-587d-9194-e66206cea59d")
+			(uuid "7b886f52-a869-5553-940c-876a77ad1036")
 		)
 		(instances
 			(project "C128 USB-C PD Power Adapter"
 				(path "/85fcbd60-5828-59f8-b929-d66180677155"
-					(reference "#PWR56")
+					(reference "#PWR55")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(text "C128 USB-C PD Power Adapter v0.1 (DC only, no 50/60 Hz: the CIA TOD clocks will not tick from mains)\nNeeds a USB-C PD charger offering 15 V (>= 3 A / 45 W recommended). U1 (CH224A) requests 15 V via R1 = 56k.\nQ1 connects the 15 V rail only after the PD contract (PG low). U2 and U3 start only above ~13.3 V (EN UVLO).\nDIN (square 5-pin): 1 = +5.10 V / ~3 A (U2 SY8205, D1 TVS), 3 = +12.3 V DC (U3, D2 TVS) into the C128 \"9 VAC\" bridge,\n2 = GND, 4 = GND/NC, 5 = other 9 VAC leg tied to GND (pin numbers per the Drunk'n'Retro diagram).\nVERIFY THE SOCKET PINOUT ON YOUR C128 WITH A METER BEFORE FIRST POWER-UP."
+	(text "C128 USB-C PD Power Adapter v0.1 (DC only, no 50/60 Hz: the CIA TOD clocks will not tick from mains)\nNeeds a USB-C PD charger offering 15 V (>= 3 A / 45 W recommended). U1 (CH224A) requests 15 V via R1 = 56k.\nQ1 connects the 15 V rail only after the PD contract (PG low). U2 and U3 start only above ~13.3 V (EN UVLO).\nDIN (square 5-pin): 1 = +5.0 V / ~3 A (U2 SY8205 -> U4 eFuse: OVLO 5.64 V, 4.45 A limit; D1 TVS), 3 = +12.3 V DC (U3, D2 TVS) into the C128 \"9 VAC\" bridge,\n2 = GND, 4 = GND/NC, 5 = other 9 VAC leg tied to GND (pin numbers per the Drunk'n'Retro diagram).\nVERIFY THE SOCKET PINOUT ON YOUR C128 WITH A METER BEFORE FIRST POWER-UP."
 		(exclude_from_sim no)
 		(at 25.4 22.86 0)
 		(effects
@@ -12712,7 +13756,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "445fa5dd-f55e-5df0-b5fb-046e4e9f3341")
+		(uuid "31ce5942-18ef-57e4-8a04-7da33763caad")
 	)
 	(sheet_instances
 		(path "/"

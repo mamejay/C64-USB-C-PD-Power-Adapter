@@ -21,6 +21,13 @@ for fp in b.GetFootprints():
     for k in range(cy.OutlineCount()):
         o = cy.Outline(k); ax.add_patch(Polygon([(o.CPoint(i).x*MM, o.CPoint(i).y*MM) for i in range(o.PointCount())], closed=True, fc='none', ec='#36c' if back else '#c33', lw=0.6, ls='-' if back else '--'))
     q = fp.GetPosition(); ax.text(q.x*MM, q.y*MM, fp.GetReference(), fontsize=8 if back else 10, ha='center', va='center', color='navy' if back else 'darkred', weight='bold')
+ZC = {'GND': None, '/5V_BUCK': '#f2c14e', '+5V': '#e8554e'}
+for z in b.Zones():
+    c = ZC.get(z.GetNetname(), '#aaa')
+    if c is None or z.GetLayer() != pcbnew.B_Cu: continue
+    fp_ = z.GetFilledPolysList(pcbnew.B_Cu)
+    for k in range(fp_.OutlineCount()):
+        o = fp_.Outline(k); ax.add_patch(Polygon([(o.CPoint(i).x*MM, o.CPoint(i).y*MM) for i in range(o.PointCount())], closed=True, fc=c, ec='none', alpha=0.45))
 for t in b.GetTracks():
     if t.Type() == pcbnew.PCB_TRACE_T:
         a, e = t.GetStart(), t.GetEnd(); c = '#1f6fd1' if t.GetLayer() == pcbnew.B_Cu else '#d12f2f'

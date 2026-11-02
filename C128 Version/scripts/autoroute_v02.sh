@@ -8,7 +8,7 @@ python3 -I - "$B" <<'PY' 2>&1 | grep -v -E "assert|leak" || true
 import sys, os, pcbnew
 b = pcbnew.LoadBoard(sys.argv[1]); print('export', pcbnew.ExportSpecctraDSN(b, 'board.dsn')); sys.stdout.flush(); os._exit(0)
 PY
-timeout 1500 java -Dgui.enabled=false -jar $FR -de board.dsn -do board.ses -mp ${2:-100} > fr.log 2>&1 || true
+timeout 1500 java -Dgui.enabled=false -jar $FR -de board.dsn -do board.ses -mp ${2:-100} ${FR_EXTRA} > fr.log 2>&1 || true
 grep -E "Auto-routing stage completed|Optimization stage completed|unrouted" fr.log | tail -4 || tail -3 fr.log
 python3 -I - "$B" <<'PY' 2>&1 | grep -v -E "assert|leak" || true
 import sys, os, pcbnew

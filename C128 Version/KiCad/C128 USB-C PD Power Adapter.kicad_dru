@@ -11,7 +11,7 @@
 
 (rule "JLC: zone clearance"
 	(condition "A.Type == 'Zone' || B.Type == 'Zone'")
-	(constraint clearance (min 0.2mm)))
+	(constraint clearance (min 0.15mm)))
 
 (rule "JLC: via"
 	(condition "A.Type == 'Via'")

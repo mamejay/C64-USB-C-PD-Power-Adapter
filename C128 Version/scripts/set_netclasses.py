@@ -5,12 +5,13 @@ pro = glob.glob(sys.argv[1] + '/*.kicad_pro')[0]
 j = json.load(open(pro))
 ns = j.setdefault('net_settings', {})
 base = next(c for c in ns['classes'] if c['name'] == 'Default')
-base.update(track_width=0.25, clearance=0.2, via_diameter=0.6, via_drill=0.3)
-pw = dict(base, name='Power', track_width=0.5, clearance=0.2, via_diameter=0.8, via_drill=0.4, priority=0)
+base.update(track_width=0.25, clearance=0.15, via_diameter=0.6, via_drill=0.3)
+pw = dict(base, name='Power', track_width=0.4, clearance=0.2, via_diameter=0.8, via_drill=0.4, priority=0)
 hi = dict(base, name='HighI', track_width=0.9, clearance=0.2, via_diameter=0.8, via_drill=0.4, priority=0)
-gnd = dict(base, name='GND', track_width=0.4, clearance=0.2, via_diameter=0.8, via_drill=0.4, priority=1)
-ns['classes'] = [base, pw, hi, gnd]
+bar = dict(base, name='Bar', track_width=0.3, clearance=0.15, via_diameter=0.8, via_drill=0.4, priority=0)   # eFuse IN/OUT bars are 0.3 mm wide, 0.19 mm apart; copper zones carry the current
+gnd = dict(base, name='GND', track_width=0.3, clearance=0.2, via_diameter=0.8, via_drill=0.4, priority=1)
+ns['classes'] = [base, pw, hi, bar, gnd]
 ns['netclass_patterns'] = [{'netclass': 'Power', 'pattern': p} for p in
-                           ('VBUS', '/VSW', '/SW2', '/12V_BUCK', '+12V', '+5V')] + [{'netclass': 'HighI', 'pattern': p} for p in ('/SW',)] + [{'netclass': 'GND', 'pattern': 'GND'}]
+                           ('VBUS', '/VSW', '/SW2', '/12V_BUCK', '+12V')] + [{'netclass': 'Bar', 'pattern': p} for p in ('/5V_BUCK', '+5V')] + [{'netclass': 'HighI', 'pattern': p} for p in ('/SW',)] + [{'netclass': 'GND', 'pattern': 'GND'}]
 json.dump(j, open(pro, 'w'), indent=2)
 print('net classes:', [c['name'] for c in ns['classes']])

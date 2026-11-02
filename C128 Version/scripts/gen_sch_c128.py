@@ -42,6 +42,7 @@ SOURCES = {
     'USB_C_Receptacle_USB2.0_16P': (f'{STD}/Connector.kicad_sym', 'USB_C_Receptacle_USB2.0_16P'),
     'Conn_01x05': (f'{STD}/Connector_Generic.kicad_sym', 'Conn_01x05'),
     'SY8205': (None, None),
+    'TPS25947': (None, None),
     'Polyfuse': (f'{STD}/Device.kicad_sym', 'Polyfuse'),
     'D_Zener': (f'{STD}/Device.kicad_sym', 'D_Zener'),         # unidirectional TVS
     'LED': (f'{STD}/Device.kicad_sym', 'LED'),
@@ -71,7 +72,19 @@ INLINE = {'SY8205': '(symbol "SY8205" (pin_names (offset 1.016)) (exclude_from_s
                       _pin('input', -10.16, 0, 0, 'EN', '3'), _pin('passive', -10.16, -5.08, 0, 'SS', '4'),
                       _pin('passive', 10.16, 5.08, 180, 'BS', '1'), _pin('power_out', 10.16, 2.54, 180, 'LX', '2'),
                       _pin('input', 10.16, -2.54, 180, 'FB', '5'), _pin('power_out', 10.16, -5.08, 180, 'VCC', '6'),
-                      _pin('power_in', 0, -10.16, 90, 'GND', '9')]) + '))'}
+                      _pin('power_in', 0, -10.16, 90, 'GND', '9')]) + '))',
+          'TPS25947': '(symbol "TPS25947" (pin_names (offset 1.016)) (exclude_from_sim no) (in_bom yes) (on_board yes) '
+          f'(property "Reference" "U" (at -7.62 10.16 0) {_f}) (property "Value" "TPS25947" (at 2.54 10.16 0) {_f}) '
+          f'(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) '
+          f'(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) '
+          f'(property "Description" "TI TPS25947 eFuse, 2.7-23 V, 0.5-6 A, adjustable OVLO" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) '
+          '(symbol "TPS25947_0_1" (rectangle (start -7.62 7.62) (end 7.62 -7.62) (stroke (width 0.254) (type default)) (fill (type background)))) '
+          '(symbol "TPS25947_1_1" '
+          + ' '.join([_pin('power_in', -10.16, 5.08, 0, 'IN', '5'), _pin('input', -10.16, 0, 0, 'EN/UVLO', '1'),
+                      _pin('input', -10.16, -2.54, 0, 'OVLO', '2'), _pin('passive', -10.16, -5.08, 0, 'DVDT', '7'),
+                      _pin('power_out', 10.16, 5.08, 180, 'OUT', '6'), _pin('open_collector', 10.16, 2.54, 180, 'AUXOFF', '3'),
+                      _pin('open_collector', 10.16, 0, 180, '~{FLT}', '4'), _pin('passive', 10.16, -2.54, 180, 'ILM', '9'),
+                      _pin('passive', 10.16, -5.08, 180, 'ITIMER', '10'), _pin('power_in', 0, -10.16, 90, 'GND', '8')]) + '))'}
 
 
 def lib_symbol(name):
@@ -116,7 +129,7 @@ PWR = {'GND', '+5V', '+12V', 'VBUS'}
 two = lambda a, b: {'1': a, '2': b}
 R0603, C0603, C0805, R1206 = FP('R_0603_1608Metric'), FP('C_0603_1608Metric'), FP('C_0805_2012Metric'), FP('R_1206_3216Metric')
 # v0.3: all JLC Basic parts (0603 passives), to cut the extended-part fees
-LCSC = {'1k': 'C21190', '5.1k': 'C23186', '10k': 'C25804', '47k': 'C25819', '51k': 'C23196', '56k': 'C23206', '75k': 'C23242',
+LCSC = {'1k': 'C21190', '5.1k': 'C23186', '10k': 'C25804', '47k': 'C25819', '51k': 'C23196', '27k': 'C22967', '750R': 'C23241', '56k': 'C23206', '75k': 'C23242',
         '100k': 'C25803', '470k': 'C23178', '0R': 'C17888',
         '100pF': 'C14858', '100nF/50V': 'C14663', '1uF/50V': 'C15849', '10uF/25V': 'C15850', '22uF/25V': 'C45783'}
 CFP = {'100pF': C0603, '100nF/50V': C0603, '1uF/50V': C0603, '10uF/25V': C0805, '22uF/25V': C0805}
@@ -161,12 +174,21 @@ PARTS = [
     C('C5', '100nF/50V', (226.06, 91.44), 'BOOT', 'SW', 'bootstrap BS-LX'),
     C('C16', '1uF/50V', (243.84, 152.4), 'VCC5', 'GND', 'internal 3.3 V LDO bypass'),
     C('C17', '100nF/50V', (157.48, 149.86), 'SS', 'GND', 'soft start: 100 nF x 0.6 V / 10 uA = 6 ms'),
-    ('L1', 'L', '4.7uH', FP('L_Cenker_CKCS8040'), (226.06, 111.76), two('SW', '+5V'),
+    ('L1', 'L', '4.7uH', FP('L_Cenker_CKCS8040'), (226.06, 111.76), two('SW', '5V_BUCK'),
      {'LCSC': 'C354638', 'Description': 'Cenker CKCS8040-4.7uH/M 4.7 uH, Isat 5.9 A, Irms 4.1 A, 19 mOhm, 8x8 mm shielded'}),
-    C('C6', '22uF/25V', (246.38, 127.0), '+5V', 'GND', 'buck output'),
-    C('C7', '22uF/25V', (256.54, 127.0), '+5V', 'GND', 'buck output'),
-    C('C18', '22uF/25V', (266.7, 127.0), '+5V', 'GND', 'buck output'),
-    R('R6', '75k', (226.06, 137.16), '+5V', 'FB', 'FB top: Vout = 0.6 x (1 + 75k/10k) = 5.10 V'),
+    C('C6', '22uF/25V', (246.38, 127.0), '5V_BUCK', 'GND', 'buck output'),
+    C('C7', '22uF/25V', (256.54, 127.0), '5V_BUCK', 'GND', 'buck output'),
+    C('C18', '22uF/25V', (266.7, 127.0), '5V_BUCK', 'GND', 'buck output'),
+    # eFuse between the buck and DIN pin 1: over-voltage lockout at ~5.64 V, current limit ~4.45 A
+    ('U4', 'TPS25947', 'TPS259470ARPWR', FP('TI_RPW0010A_VQFN-10-HR_2x2mm'), (299.72, 111.76),
+     {'5': '5V_BUCK', '6': '+5V', '1': 'EF_EN', '2': 'EF_OVLO', '9': 'EF_ILM', '8': 'GND'},   # DVDT/ITIMER open (fastest), AUXOFF/FLT unused
+     {'LCSC': 'C3662799', 'Description': 'TI TPS259470A eFuse (auto-retry): cuts the C128 +5 V off if the buck output exceeds ~5.64 V; 4.45 A current limit, reverse blocking'}),
+    R('R13', '100k', (276.86, 132.08), '5V_BUCK', 'EF_EN', 'eFuse EN/UVLO top: on above ~3.75 V'),
+    R('R14', '47k', (276.86, 152.4), 'EF_EN', 'GND', 'eFuse EN/UVLO bottom (keeps EN < 5 V even with 15 V at IN)'),
+    R('R15', '100k', (287.02, 132.08), '5V_BUCK', 'EF_OVLO', 'eFuse OVLO top: trips at 1.20 V x 127/27 = 5.64 V, releases at 5.13 V'),
+    R('R16', '27k', (287.02, 152.4), 'EF_OVLO', 'GND', 'eFuse OVLO bottom'),
+    R('R17', '750R', (322.58, 132.08), 'EF_ILM', 'GND', 'eFuse current limit: 750 R = 4.45 A (3.96 A min)'),
+    R('R6', '75k', (226.06, 137.16), '5V_BUCK', 'FB', 'FB top: Vout = 0.6 x (1 + 75k/10k) = 5.10 V'),
     R('R7', '10k', (226.06, 157.48), 'FB', 'GND', 'FB bottom'),
     # 12 V buck for DIN pin 3 (C128 9 VAC input) (same reference design, FB 100k/5.1k)
     ('U3', 'TPS54302', 'TPS54302DDCR', FP('TSOT-23-6'), (198.12, 238.76),
@@ -311,7 +333,7 @@ for ref, name, value, fp, (sx, sy), nets, extra in PARTS:
         assert pn in pins, (ref, pn)
 
 use('PWR_FLAG')
-for i, net in enumerate(['VBUS', 'GND', 'VSW', '+5V', '+12V']):
+for i, net in enumerate(['VBUS', 'GND', 'VSW', '5V_BUCK', '+12V']):   # +5V is driven by U4 OUT
     x, y = 236.22 + i * 10.16, 22.86
     items.append(symbol_inst('PWR_FLAG', '#FLG%02d' % (i + 1), 'PWR_FLAG', '', x, y, 0, pins=['1'], inbom=False,
                              valat=(x, y - 6.35, None)))
@@ -325,7 +347,7 @@ for i, net in enumerate(['VBUS', 'GND', 'VSW', '+5V', '+12V']):
 NOTE = ('C128 USB-C PD Power Adapter v0.1 (DC only, no 50/60 Hz: the CIA TOD clocks will not tick from mains)\n'
         'Needs a USB-C PD charger offering 15 V (>= 3 A / 45 W recommended). U1 (CH224A) requests 15 V via R1 = 56k.\n'
         'Q1 connects the 15 V rail only after the PD contract (PG low). U2 and U3 start only above ~13.3 V (EN UVLO).\n'
-        'DIN (square 5-pin): 1 = +5.10 V / ~3 A (U2 SY8205, D1 TVS), 3 = +12.3 V DC (U3, D2 TVS) into the C128 "9 VAC" bridge,\n'
+        'DIN (square 5-pin): 1 = +5.0 V / ~3 A (U2 SY8205 -> U4 eFuse: OVLO 5.64 V, 4.45 A limit; D1 TVS), 3 = +12.3 V DC (U3, D2 TVS) into the C128 "9 VAC" bridge,\n'
         '2 = GND, 4 = GND/NC, 5 = other 9 VAC leg tied to GND (pin numbers per the Drunk\'n\'Retro diagram).\n'
         'VERIFY THE SOCKET PINOUT ON YOUR C128 WITH A METER BEFORE FIRST POWER-UP.')
 items.append(['text', Q(NOTE), ['exclude_from_sim', 'no'], ['at', 25.4, 22.86, 0],
