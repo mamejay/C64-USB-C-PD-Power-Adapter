@@ -24,7 +24,7 @@ A compact replacement power supply for the Commodore 64. It plugs straight into 
 - **PD sink:** a WCH CH224A requests 15 V from the charger (R1 = 56k).
 - **Output switch:** a P-MOSFET (Q1) connects the 15 V rail only once the PD contract is made (PG low). Its Miller cap gives a soft ~10 ms ramp.
 - **Lockout:** both bucks have an EN-pin UVLO that starts at ~13.2 V. A plain 5 V charger, or one that falls back to 9/12 V, never powers the C64.
-- **Protection:** each output has a TVS diode. F1/F2 are 0R links by default; fit 1206 PTCs there if wanted.
+- **Protection:** each output has a TVS diode. F1/F2 are 0R links by default; fit 1206 PTCs there if wanted. For proper over-voltage protection see [v0.4](#v04-over-voltage-protection).
 
 ### Why 12 V DC on pin 6
 The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (breadbin) or 7809 (C64C).
@@ -74,6 +74,14 @@ The C64 runs its "9 VAC" input through its own bridge rectifier and a 7812 (brea
 - The 3D-printed case (not yet printed).
 
 **Measuring tip:** pin 6 is DC, even though the C64 labels it "9 VAC". Measure it on the meter's **DC** range: on the AC range a meter shows a misleading figure, about 8 V here.
+
+## v0.4: over-voltage protection
+[`Hardware v0.4/`](Hardware%20v0.4/) is v0.3 with an eFuse (TI TPS259470A) on each output in place of the F1/F2 links. It is designed and DRC-clean but **not yet built**.
+- **+5 V:** cuts the C64 off above 5.70 V; 3.3 A current limit.
+- **+12 V (pin 6):** cuts off above 14.2 V; 1.5 A current limit.
+- **Shorted converter:** if a buck fails and passes the 15 V input straight through, the C64 is disconnected. Reverse current is blocked too.
+- **Same size:** the board, holes and connectors are unchanged, so the same case fits.
+- **Cost:** one new extended part (the eFuse, used twice).
 
 ## C128 version
 See [`C128 Version/`](C128%20Version/) for the Commodore 128 variant (v0.1, not yet built). It has:

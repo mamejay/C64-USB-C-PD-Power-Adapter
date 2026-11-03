@@ -1,0 +1,29 @@
+C64 USB-C PD Power Adapter v0.4 (over-voltage protection) - JLCPCB order notes (generated 2026-11-03)
+
+PCB
+  Upload:      "C64 USB-C PD Power Adapter - Gerbers.zip"
+  Layers 2, size 46.1 x 30.0 mm (same as v0.3, same case), 1.6 mm FR-4, 1 oz.
+  Holes: 7x 1.6 mm plated (DIN-7, J2) + 2x 2.7 mm non-plated (M2.5 mounting) + 0.3/0.4 mm vias.
+  Tightest gap: 0.15 mm, between the eFuse's own IN/OUT pads (JLC standard minimum is 0.127 mm).
+
+Assembly (PCBA)
+  Side:        BOTTOM only
+  BOM:         "C64 USB-C PD Power Adapter - BOM.csv"   (26 lines, 48 parts)
+  CPL:         "C64 USB-C PD Power Adapter - CPL.csv"
+  Not assembled: J2 = 7-pin DIN male plug insert (hand-solder from the top side). H1/H2 are holes only.
+
+Rotations: U1, U2, U3 +90 and D1/D2/D3 +180 are already in the CPL (confirmed on the v0.3 order).
+  CHECK IN JLC'S PREVIEW: U4 and U5 (TPS259470A, 2x2 mm QFN) are new and their rotation is unverified.
+  The two long centre pads of each chip must land on the two long centre pads of the footprint, and the
+  pin-1 dot must match the footprint's pin-1 corner. If it is off, rotate U4/U5 in the preview (try 90 / 180).
+
+Extended parts (setup fee each), v0.4 = 5 lines:
+  U1 CH224A C42459160, U2/U3 TPS54302DDCR C311983, U4/U5 TPS259470ARPWR C3662799 (new, ~2,400 in stock),
+  J1 USB-C C165948, L1/L2 FXL0530-100-M C177248.
+  D1 SMF5.0A C19077497 and D2 SMF13A C41376087 are "Preferred" (no setup fee). Everything else is Basic.
+
+What changed from v0.3
+  F1/F2 (0R links) are replaced by two TI TPS259470A eFuses:
+    U4 on +5 V : cuts the C64 off above 5.70 V (back on below 5.18 V), 3.3 A current limit (R17 1k).
+    U5 on 12 V : cuts DIN pin 6 off above 14.2 V (back on below 12.9 V), 1.5 A current limit (R22 2.2k).
+  Both block reverse current and retry automatically after a fault.
