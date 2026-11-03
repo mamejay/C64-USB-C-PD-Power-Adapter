@@ -103,8 +103,6 @@ module base() {
         // label on the outside of the floor (mirrored so it reads correctly from outside)
         translate([pcb_w / 2, 14.5, -0.01]) mirror([1, 0, 0]) linear_extrude(0.4)
             text("C64 USB-C PD", size = 3.6, halign = "center", valign = "center", font = "Liberation Sans:style=Bold");
-        translate([pcb_w / 2 + 5, 9.5, -0.01]) mirror([1, 0, 0]) linear_extrude(0.4)
-            text("15V PD in", size = 2.6, halign = "center", valign = "center", font = "Liberation Sans");
     }
 }
 
@@ -123,9 +121,6 @@ module lid() {
             translate([0, 0, -1]) cylinder(d = 2.8, h = lid_t + 2);
             translate([0, 0, lid_t - 1.25]) cylinder(d1 = 2.2, d2 = 4.9, h = 1.35);
         }
-        // pin-function legend next to the DIN hole (debossed on the outside face)
-        translate([din[0] - 13.5, din[1] + 9.5, lid_t - 0.4]) linear_extrude(1)
-            text("+5V 4/5  +12V 6", size = 2.2, halign = "center", font = "Liberation Sans");
     }
 }
 

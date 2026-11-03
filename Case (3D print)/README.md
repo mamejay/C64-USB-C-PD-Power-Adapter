@@ -19,11 +19,10 @@ Use **PETG or ABS**, not PLA, because the two bucks get warm. Walls are 1.6 mm a
   - edge ledges wherever no part is within 0.9 mm of the board edge.
 - **LED window** (2.4 mm) under D3.
 - **Vent slots** under the two bucks.
-- **Label** on the base: "C64 USB-C PD / 15V PD in".
+- **Label** on the base: "C64 USB-C PD" (the only text on the case).
 - **Lid:**
   - DIN hole, 14 mm by default;
   - two countersunk M2.5 holes, so the heads sit flush and nothing sticks out towards the C64;
-  - "+5V 4/5 +12V 6" legend;
   - two tabs that hook into slots in the base's bottom wall.
 
 ## Assembly
